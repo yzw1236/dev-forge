@@ -6,12 +6,11 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 
 ### ✅ Implemented Features
 
-- None yet (project initialization stage)
+- Timestamp Converter: Convert between timestamps and dates.
+- JSON Formatter & Validator: Beautify and validate JSON data for better readability.
 
 ### 📝 Upcoming Features
 
-- Timestamp Converter: Convert between timestamps and dates.
-- JSON Formatter & Validator: Beautify and validate JSON data for better readability.
 - SQL Formatter: Beautify and format SQL statements.
 - Code Beautifier: Support code formatting for various mainstream programming languages.
 - Crontab Expression Generator/Validator: Generate and validate cron expressions.
@@ -27,6 +26,21 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 - Password Generator: Generate secure passwords with custom rules.
 - HTTP Status Code Lookup: Query common HTTP status codes and their meanings.
 - User-Agent Parser: Parse and display detailed information about User-Agent strings.
+
+## Usage
+
+### Timestamp Converter
+- Enter a date (e.g., `2024-06-01`) or a timestamp (in seconds or milliseconds).
+- Click "Convert" to see the result:
+  - If you enter a date, you'll get the corresponding timestamp (in milliseconds).
+  - If you enter a timestamp, you'll get the corresponding ISO date string.
+- Errors are shown if the input is invalid.
+
+### JSON Formatter & Validator
+- Paste or type your JSON into the textarea.
+- Click "Format & Validate" to beautify the JSON and check for errors.
+- If the JSON is valid, it will be formatted and displayed below.
+- If invalid, an error message will be shown.
 
 ## Tech Stack
 

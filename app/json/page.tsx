@@ -1,0 +1,58 @@
+"use client";
+import { useState } from "react";
+
+export default function JsonPage() {
+  return (
+    <main className="min-h-screen flex flex-col items-center justify-center p-4">
+      <section className="w-full max-w-xl bg-white dark:bg-neutral-900 rounded-xl shadow p-6 flex flex-col gap-4 border border-neutral-200 dark:border-neutral-800">
+        <h1 className="text-2xl font-bold mb-2">JSON Formatter & Validator</h1>
+        <JsonFormatterValidator />
+      </section>
+    </main>
+  );
+}
+
+function JsonFormatterValidator() {
+  const [input, setInput] = useState("");
+  const [output, setOutput] = useState("");
+  const [error, setError] = useState("");
+
+  function handleFormat() {
+    setError("");
+    setOutput("");
+    try {
+      const parsed = JSON.parse(input);
+      setOutput(JSON.stringify(parsed, null, 2));
+    } catch (e) {
+      setError("Invalid JSON: " + (e instanceof Error ? e.message : ""));
+    }
+  }
+
+  return (
+    <div className="flex flex-col gap-2">
+      <textarea
+        className="border rounded px-3 py-2 text-sm bg-neutral-50 dark:bg-neutral-800 font-mono min-h-[100px] focus:outline-none focus:ring-2 focus:ring-blue-400"
+        placeholder="Paste or type JSON here"
+        value={input}
+        onChange={e => setInput(e.target.value)}
+        spellCheck={false}
+      />
+      <button
+        className="bg-blue-600 hover:bg-blue-700 text-white font-medium rounded px-4 py-2 transition-colors self-start"
+        onClick={handleFormat}
+      >
+        Format & Validate
+      </button>
+      {output && (
+        <pre className="mt-2 bg-neutral-100 dark:bg-neutral-800 rounded p-2 text-green-700 dark:text-green-400 overflow-x-auto">
+          {output}
+        </pre>
+      )}
+      {error && (
+        <div className="mt-2 text-red-600 dark:text-red-400">
+          {error}
+        </div>
+      )}
+    </div>
+  );
+}
