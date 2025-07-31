@@ -24,6 +24,7 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 - Data Structure Converter: Convert between JSON, YAML, and XML formats with auto-detection.
 - Image to Base64: Convert image files to Base64 strings with preview and one-click copy.
 - User-Agent Parser: Parse and analyze User-Agent strings to extract browser, OS, and device information.
+- Code Beautifier: Format and beautify code for various mainstream programming languages.
 
 ### 📝 Upcoming Features
 - Code Beautifier: Support code formatting for various mainstream programming languages.
@@ -128,6 +129,11 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 - Extract browser, OS, device type, and rendering engine details.
 - Detect mobile, tablet, desktop, and bot devices.
 - View version information for browsers and operating systems.
+
+### Code Beautifier
+- Select a language (JS, TS, JSON, HTML, CSS, Python, Java, C/C++, Go, Shell, etc.).
+- Paste or enter code, then click "格式化" to beautify.
+- One-click copy for the beautified result, with error feedback.
 
 ## Tech Stack
 
