@@ -4,9 +4,29 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 
 🌐 **Live Demo**: [https://001236.xyz](https://001236.xyz)
 
-## Feature List
+## Feature Overview
 
-### ✅ Implemented Features
+| Tool                     | Description                                                      |
+|--------------------------|------------------------------------------------------------------|
+| Timestamp Converter      | Convert between timestamps and dates                              |
+| JSON Formatter           | Beautify and validate JSON data                                   |
+| SQL Formatter            | Beautify and format SQL statements                                |
+| Base64 Encoder/Decoder   | Encode/decode text and Base64                                     |
+| URL Encoder/Decoder      | Encode/decode URL text                                            |
+| UUID/GUID Generator      | Generate unique identifiers (UUID/GUID)                           |
+| Password Generator       | Generate secure passwords with custom rules                       |
+| JWT Decoder              | Parse and analyze JWT tokens                                      |
+| Hash Calculator          | Calculate hashes (MD5, SHA-1, SHA-256, etc.)                     |
+| Color Format Converter   | Convert between HEX, RGB, HSL, HSV, CMYK                          |
+| Base Converter           | Convert numbers between binary, octal, decimal, hexadecimal       |
+| HTTP Status Lookup       | Search and explain HTTP status codes                              |
+| Crontab Generator        | Generate, validate, and explain crontab expressions               |
+| Data Structure Converter | Convert between JSON, YAML, XML                                   |
+| Image to Base64          | Convert images to Base64 strings                                  |
+| User-Agent Parser        | Parse and analyze User-Agent strings                              |
+| Code Beautifier          | Format and beautify code for various languages                    |
+
+## Implemented Features
 
 - Timestamp Converter: Convert between timestamps and dates.
 - JSON Formatter & Validator: Beautify and validate JSON data for better readability.
@@ -27,12 +47,10 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 - Code Beautifier: Format and beautify code for various mainstream programming languages.
 
 ### 📝 Upcoming Features
-- Code Beautifier: Support code formatting for various mainstream programming languages.
-- Crontab Expression Generator/Validator: Generate and validate cron expressions.
-- Data Structure Converter: Convert between formats such as JSON, YAML, XML, etc.
-- Image to Base64: Convert image files to Base64 strings.
-- HTTP Status Code Lookup: Query common HTTP status codes and their meanings.
-- User-Agent Parser: Parse and display detailed information about User-Agent strings.
+- Docker deployment support
+- More code beautifier language support
+- More data structure format support (e.g., TOML, CSV)
+- More developer utilities (suggestions welcome!)
 
 ## Usage
 
