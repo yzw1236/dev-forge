@@ -15,13 +15,13 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 - URL Encoder/Decoder: Encode text for URLs or decode URL-encoded text back to readable format.
 - UUID/GUID Generator: Generate unique identifiers with support for both UUID and GUID formats.
 - Password Generator: Generate secure passwords with customizable length, character types, and strength indicators.
+- JWT Decoder: Parse and display JWT contents with token analysis and validation.
+- Hash Calculator: Support multiple hash algorithms (MD5, SHA-1, SHA-256, SHA-512, SHA-384, SHA-224).
+- Color Format Converter: Convert between RGB, HEX, HSL, HSV, and CMYK color formats.
 
 ### 📝 Upcoming Features
 - Code Beautifier: Support code formatting for various mainstream programming languages.
 - Crontab Expression Generator/Validator: Generate and validate cron expressions.
-- JWT (JSON Web Token) Decoder: Parse and display JWT contents.
-- Hash Calculator: Support multiple hash algorithms (e.g., MD5, SHA1, SHA256, etc.).
-- Color Format Converter: Convert between RGB, HEX, HSL, and other color formats.
 - Base Converter: Support conversions between binary, octal, decimal, hexadecimal, etc.
 - Data Structure Converter: Convert between formats such as JSON, YAML, XML, etc.
 - Image to Base64: Convert image files to Base64 strings.
@@ -72,6 +72,24 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 - Select character types: uppercase, lowercase, numbers, and symbols.
 - Use advanced options to exclude similar or ambiguous characters.
 - View password strength indicator and copy the generated password.
+
+### JWT Decoder
+- Paste your JWT token in the input field.
+- Click "Decode JWT" to view header, payload, and signature.
+- View token information including expiration and issuance dates.
+- Copy individual sections (header, payload, signature) as needed.
+
+### Hash Calculator
+- Enter text to calculate hash values.
+- Select from multiple algorithms: MD5, SHA-1, SHA-256, SHA-512, SHA-384, SHA-224.
+- Use "Select All" or "Select None" for bulk operations.
+- Copy individual hash results with one click.
+
+### Color Format Converter
+- Enter color in any format (hex, RGB, HSL) or use the color picker.
+- View real-time conversion to all supported formats.
+- See color preview and copy any format value.
+- Supports HEX, RGB, HSL, HSV, and CMYK formats.
 
 ## Tech Stack
 
