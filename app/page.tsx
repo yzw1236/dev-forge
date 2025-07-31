@@ -11,7 +11,7 @@ export default function Home() {
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto">
           {/* Timestamp Tool Card */}
           <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-4 md:p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="flex items-center mb-4">
@@ -21,12 +21,12 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200">Timestamp Converter</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400">Convert between timestamps and dates</p>
+                <h3 className="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200">Timestamp</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Convert timestamps</p>
               </div>
             </div>
             <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-4">
-              Easily convert Unix timestamps to human-readable dates and vice versa. Supports various date formats and timezones.
+              Convert Unix timestamps to dates and vice versa.
             </p>
             <a 
               href="/timestamp" 
@@ -48,16 +48,151 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200">JSON Formatter</h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400">Format and validate JSON data</p>
+                <h3 className="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200">JSON Tools</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Format JSON data</p>
               </div>
             </div>
             <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-4">
-              Beautify, validate, and format JSON data with syntax highlighting and error detection for better readability.
+              Beautify and validate JSON data.
             </p>
             <a 
               href="/json" 
               className="inline-flex items-center px-3 py-2 md:px-4 md:py-2 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-sm md:text-base"
+            >
+              Open Tool
+              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+
+          {/* SQL Formatter Tool Card */}
+          <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-4 md:p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="flex items-center mb-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex items-center justify-center mr-3 md:mr-4">
+                <svg className="w-5 h-5 md:w-6 md:h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200">SQL Formatter</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Format SQL queries</p>
+              </div>
+            </div>
+            <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-4">
+              Format SQL with intelligent indentation.
+            </p>
+            <a 
+              href="/sql" 
+              className="inline-flex items-center px-3 py-2 md:px-4 md:py-2 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-sm md:text-base"
+            >
+              Open Tool
+              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+
+          {/* Base64 Tool Card */}
+          <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-4 md:p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="flex items-center mb-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mr-3 md:mr-4">
+                <svg className="w-5 h-5 md:w-6 md:h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200">Base64 Tool</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Encode/Decode</p>
+              </div>
+            </div>
+            <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-4">
+              Encode text to Base64 or decode back.
+            </p>
+            <a 
+              href="/base64" 
+              className="inline-flex items-center px-3 py-2 md:px-4 md:py-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-sm md:text-base"
+            >
+              Open Tool
+              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+
+          {/* URL Tool Card */}
+          <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-4 md:p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="flex items-center mb-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl flex items-center justify-center mr-3 md:mr-4">
+                <svg className="w-5 h-5 md:w-6 md:h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200">URL Tool</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Encode/Decode</p>
+              </div>
+            </div>
+            <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-4">
+              Encode text for URLs or decode back.
+            </p>
+            <a 
+              href="/url" 
+              className="inline-flex items-center px-3 py-2 md:px-4 md:py-2 bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-sm md:text-base"
+            >
+              Open Tool
+              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+
+          {/* UUID Generator Tool Card */}
+          <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-4 md:p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="flex items-center mb-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-teal-100 dark:bg-teal-900/30 rounded-xl flex items-center justify-center mr-3 md:mr-4">
+                <svg className="w-5 h-5 md:w-6 md:h-6 text-teal-600 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200">UUID Generator</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Generate UUIDs</p>
+              </div>
+            </div>
+            <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-4">
+              Generate unique identifiers.
+            </p>
+            <a 
+              href="/uuid" 
+              className="inline-flex items-center px-3 py-2 md:px-4 md:py-2 bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-sm md:text-base"
+            >
+              Open Tool
+              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+
+          {/* Password Generator Tool Card */}
+          <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-4 md:p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div className="flex items-center mb-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-pink-100 dark:bg-pink-900/30 rounded-xl flex items-center justify-center mr-3 md:mr-4">
+                <svg className="w-5 h-5 md:w-6 md:h-6 text-pink-600 dark:text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200">Password Gen</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Generate passwords</p>
+              </div>
+            </div>
+            <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-4">
+              Generate secure passwords.
+            </p>
+            <a 
+              href="/password" 
+              className="inline-flex items-center px-3 py-2 md:px-4 md:py-2 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-sm md:text-base"
             >
               Open Tool
               <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

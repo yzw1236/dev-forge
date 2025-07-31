@@ -10,22 +10,21 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 
 - Timestamp Converter: Convert between timestamps and dates.
 - JSON Formatter & Validator: Beautify and validate JSON data for better readability.
+- SQL Formatter: Beautify and format SQL statements with intelligent indentation and proper spacing.
+- Base64 Encoder/Decoder: Convert between text and Base64 with bidirectional functionality.
+- URL Encoder/Decoder: Encode text for URLs or decode URL-encoded text back to readable format.
+- UUID/GUID Generator: Generate unique identifiers with support for both UUID and GUID formats.
+- Password Generator: Generate secure passwords with customizable length, character types, and strength indicators.
 
 ### 📝 Upcoming Features
-
-- SQL Formatter: Beautify and format SQL statements.
 - Code Beautifier: Support code formatting for various mainstream programming languages.
 - Crontab Expression Generator/Validator: Generate and validate cron expressions.
-- Base64 Encode/Decode: Convert between text and Base64.
-- URL Encode/Decode: Encode and decode URLs.
 - JWT (JSON Web Token) Decoder: Parse and display JWT contents.
 - Hash Calculator: Support multiple hash algorithms (e.g., MD5, SHA1, SHA256, etc.).
 - Color Format Converter: Convert between RGB, HEX, HSL, and other color formats.
 - Base Converter: Support conversions between binary, octal, decimal, hexadecimal, etc.
 - Data Structure Converter: Convert between formats such as JSON, YAML, XML, etc.
 - Image to Base64: Convert image files to Base64 strings.
-- UUID/GUID Generator: Quickly generate unique identifiers.
-- Password Generator: Generate secure passwords with custom rules.
 - HTTP Status Code Lookup: Query common HTTP status codes and their meanings.
 - User-Agent Parser: Parse and display detailed information about User-Agent strings.
 
@@ -43,6 +42,36 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 - Click "Format & Validate" to beautify the JSON and check for errors.
 - If the JSON is valid, it will be formatted and displayed below.
 - If invalid, an error message will be shown.
+
+### SQL Formatter
+- Paste or type your SQL query into the input textarea.
+- Click "Format SQL" to beautify the query with proper indentation and spacing.
+- The formatted SQL will be displayed in the output area with improved readability.
+- Use the "Copy" button to copy the formatted SQL to your clipboard.
+
+### Base64 Encoder/Decoder
+- Switch between Encode and Decode modes using the toggle buttons.
+- Enter text to encode to Base64 or paste Base64 string to decode.
+- Click the respective button to perform the conversion.
+- Use "Copy" to copy the result or "Swap" to move the result to input.
+
+### URL Encoder/Decoder
+- Switch between Encode and Decode modes using the toggle buttons.
+- Enter text to encode for URLs or paste URL-encoded text to decode.
+- Click the respective button to perform the conversion.
+- Use "Copy" to copy the result or "Swap" to move the result to input.
+
+### UUID/GUID Generator
+- Choose between UUID (lowercase) and GUID (uppercase) formats.
+- Set the number of UUIDs to generate (1-100).
+- Click "Generate" to create unique identifiers.
+- Copy individual UUIDs or all at once using the copy buttons.
+
+### Password Generator
+- Adjust password length using the slider (8-64 characters).
+- Select character types: uppercase, lowercase, numbers, and symbols.
+- Use advanced options to exclude similar or ambiguous characters.
+- View password strength indicator and copy the generated password.
 
 ## Tech Stack
 
