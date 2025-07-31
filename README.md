@@ -1,6 +1,8 @@
 # Dev Forge
 
-An online toolbox designed for developers, built with React (Next.js), aiming to improve development efficiency and simplify daily development tasks. The project is planned to be deployed on a Serverless platform, supporting high availability and elastic scaling.
+An online toolbox designed for developers, built with React (Next.js), aiming to improve development efficiency and simplify daily development tasks. The project is deployed on a Serverless platform, supporting high availability and elastic scaling.
+
+🌐 **Live Demo**: [https://001236.xyz](https://001236.xyz)
 
 ## Feature List
 
@@ -65,7 +67,22 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 
 ## Deployment
 
-This project is planned to be deployed using a Serverless architecture. Detailed deployment instructions will be added in future documentation.
+### Online Access
+The application is currently deployed and accessible at: [https://001236.xyz](https://001236.xyz)
+
+### Docker Deployment (Coming Soon)
+This project will support Docker deployment for easy containerized deployment:
+
+```bash
+# Build the Docker image
+docker build -t dev-forge .
+
+# Run the container
+docker run -p 3000:3000 dev-forge
+```
+
+### Serverless Deployment
+This project is designed for Serverless architecture deployment, supporting high availability and elastic scaling. Detailed deployment instructions will be added in future documentation.
 
 ## Contribution
 
