@@ -20,6 +20,9 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 - Color Format Converter: Convert between RGB, HEX, HSL, HSV, and CMYK color formats.
 - Base Converter: Convert numbers between binary, octal, decimal, and hexadecimal bases.
 - HTTP Status Code Lookup: Search and understand HTTP status codes with detailed descriptions.
+- Crontab Generator/Validator: Generate, validate, and explain Linux crontab expressions with templates.
+- Data Structure Converter: Convert between JSON, YAML, and XML formats with auto-detection.
+- Image to Base64: Convert image files to Base64 strings with preview and one-click copy.
 - User-Agent Parser: Parse and analyze User-Agent strings to extract browser, OS, and device information.
 
 ### 📝 Upcoming Features
@@ -104,6 +107,21 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 - Filter by categories (Informational, Success, Redirection, Client Error, Server Error).
 - View detailed information for each status code.
 - Click on any status code for comprehensive details.
+
+### Crontab Generator/Validator
+- Select a common template or enter a custom crontab expression.
+- Click "校验/解释" to validate and explain the expression.
+- One-click copy and error feedback.
+
+### Data Structure Converter
+- Paste JSON, YAML, or XML; format is auto-detected.
+- Select output format (JSON/YAML/XML) and click "转换".
+- One-click copy for the result, with error feedback.
+
+### Image to Base64
+- Drag & drop or click to upload an image file.
+- Preview the image and get the Base64 string instantly.
+- One-click copy for the Base64 result.
 
 ### User-Agent Parser
 - Paste User-Agent string to analyze browser and device information.
