@@ -15,22 +15,30 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto">
           {tools.map((tool) => (
-            <div key={tool.route} className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-4 md:p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="flex items-center mb-4">
-                <div className={`w-10 h-10 md:w-12 md:h-12 bg-${tool.color}-100 dark:bg-${tool.color}-900/30 rounded-xl flex items-center justify-center mr-3 md:mr-4`}>
+            <div
+              key={tool.route}
+              className="flex flex-col h-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="flex items-center mb-3">
+                <div
+                  className={`w-12 h-12 bg-${tool.color}-100 dark:bg-${tool.color}-900/30 rounded-xl flex items-center justify-center mr-4`}
+                >
                   {tool.icon}
                 </div>
-                <div>
-                  <h3 className="text-lg md:text-xl font-semibold text-slate-800 dark:text-slate-200">{tool.name}</h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">{tool.desc}</p>
+                <div className="min-w-0">
+                  <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 break-words leading-tight">{tool.name}</h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-400">{tool.desc}</p>
                 </div>
               </div>
-              <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-4">
-                {tool.desc}
-              </p>
-              <Link href={tool.route} className={`inline-flex items-center px-3 py-2 md:px-4 md:py-2 bg-gradient-to-r from-${tool.color}-500 to-${tool.color}-600 hover:from-${tool.color}-600 hover:to-${tool.color}-700 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-sm md:text-base`}>
+              <div className="flex-grow" />
+              <Link
+                href={tool.route}
+                className={`mt-3 inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-${tool.color}-500 to-${tool.color}-600 hover:from-${tool.color}-600 hover:to-${tool.color}-700 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg text-sm`}
+              >
                 Open Tool
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </Link>
             </div>
           ))}
