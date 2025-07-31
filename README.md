@@ -18,11 +18,13 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 - JWT Decoder: Parse and display JWT contents with token analysis and validation.
 - Hash Calculator: Support multiple hash algorithms (MD5, SHA-1, SHA-256, SHA-512, SHA-384, SHA-224).
 - Color Format Converter: Convert between RGB, HEX, HSL, HSV, and CMYK color formats.
+- Base Converter: Convert numbers between binary, octal, decimal, and hexadecimal bases.
+- HTTP Status Code Lookup: Search and understand HTTP status codes with detailed descriptions.
+- User-Agent Parser: Parse and analyze User-Agent strings to extract browser, OS, and device information.
 
 ### 📝 Upcoming Features
 - Code Beautifier: Support code formatting for various mainstream programming languages.
 - Crontab Expression Generator/Validator: Generate and validate cron expressions.
-- Base Converter: Support conversions between binary, octal, decimal, hexadecimal, etc.
 - Data Structure Converter: Convert between formats such as JSON, YAML, XML, etc.
 - Image to Base64: Convert image files to Base64 strings.
 - HTTP Status Code Lookup: Query common HTTP status codes and their meanings.
@@ -90,6 +92,24 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 - View real-time conversion to all supported formats.
 - See color preview and copy any format value.
 - Supports HEX, RGB, HSL, HSV, and CMYK formats.
+
+### Base Converter
+- Select input base (binary, octal, decimal, hexadecimal).
+- Enter number and see real-time conversion to all bases.
+- Copy individual base results with one click.
+- Includes quick examples for common conversions.
+
+### HTTP Status Code Lookup
+- Search status codes by number, message, or description.
+- Filter by categories (Informational, Success, Redirection, Client Error, Server Error).
+- View detailed information for each status code.
+- Click on any status code for comprehensive details.
+
+### User-Agent Parser
+- Paste User-Agent string to analyze browser and device information.
+- Extract browser, OS, device type, and rendering engine details.
+- Detect mobile, tablet, desktop, and bot devices.
+- View version information for browsers and operating systems.
 
 ## Tech Stack
 

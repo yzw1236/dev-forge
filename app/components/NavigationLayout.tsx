@@ -172,6 +172,39 @@ export default function NavigationLayout({
               </svg>
               <span className="font-medium">Color Converter</span>
             </a>
+            
+            <a 
+              href="/base" 
+              className="flex items-center px-4 py-3 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-800 transition-colors group"
+              onClick={() => setSidebarOpen(false)}
+            >
+              <svg className="w-5 h-5 mr-3 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+              <span className="font-medium">Base Converter</span>
+            </a>
+            
+            <a 
+              href="/http-status" 
+              className="flex items-center px-4 py-3 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-800 transition-colors group"
+              onClick={() => setSidebarOpen(false)}
+            >
+              <svg className="w-5 h-5 mr-3 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <span className="font-medium">HTTP Status Lookup</span>
+            </a>
+            
+            <a 
+              href="/user-agent" 
+              className="flex items-center px-4 py-3 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-800 transition-colors group"
+              onClick={() => setSidebarOpen(false)}
+            >
+              <svg className="w-5 h-5 mr-3 text-lime-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <span className="font-medium">User-Agent Parser</span>
+            </a>
           </div>
           
           {/* Footer */}
