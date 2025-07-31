@@ -258,67 +258,7 @@ export default function BaseConverter() {
           </div>
         </div>
 
-        {/* Quick Examples */}
-        <div className="mt-8 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-6">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4 flex items-center">
-            <svg className="w-6 h-6 mr-2 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            Quick Examples
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
-              <div className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Binary: 1010</div>
-              <div className="text-xs text-slate-500 dark:text-slate-400">Decimal: 10</div>
-            </div>
-            <div className="p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
-              <div className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Octal: 17</div>
-              <div className="text-xs text-slate-500 dark:text-slate-400">Decimal: 15</div>
-            </div>
-            <div className="p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
-              <div className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Decimal: 255</div>
-              <div className="text-xs text-slate-500 dark:text-slate-400">Hex: FF</div>
-            </div>
-            <div className="p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
-              <div className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Hex: 1A</div>
-              <div className="text-xs text-slate-500 dark:text-slate-400">Decimal: 26</div>
-            </div>
-          </div>
-        </div>
 
-        {/* Features Section */}
-        <div className="mt-12 text-center">
-          <h2 className="text-2xl font-bold mb-8 text-slate-800 dark:text-slate-200">Base Converter Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17v4a2 2 0 002 2h4M15 7l3-3m0 0h-3m3 0v3" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Multiple Bases</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Convert between binary, octal, decimal, and hexadecimal</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Real-time Conversion</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Instant conversion as you type</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Easy Copy</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">One-click copy for each base format</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

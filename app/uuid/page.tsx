@@ -173,39 +173,7 @@ export default function UUIDGenerator() {
           </div>
         )}
 
-        {/* Features Section */}
-        <div className="mt-12 text-center">
-          <h2 className="text-2xl font-bold mb-8 text-slate-800 dark:text-slate-200">UUID Generator Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-teal-100 dark:bg-teal-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-teal-600 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Multiple Formats</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Generate UUIDs or GUIDs with different case formats</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Bulk Generation</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Generate multiple UUIDs at once (up to 100)</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Easy Copy</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Copy individual UUIDs or all at once</p>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   );

@@ -260,39 +260,7 @@ Example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZS
           </div>
         )}
 
-        {/* Features Section */}
-        <div className="mt-12 text-center">
-          <h2 className="text-2xl font-bold mb-8 text-slate-800 dark:text-slate-200">JWT Decoder Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Easy Decoding</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Simply paste your JWT token and decode instantly</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Token Analysis</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">View expiration, issuance dates, and token validity</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Copy Sections</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Copy header, payload, or signature individually</p>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   );

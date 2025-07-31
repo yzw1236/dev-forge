@@ -208,39 +208,7 @@ SELECT id, name, email FROM users WHERE status = 'active' AND created_at > '2024
           </div>
         </div>
 
-        {/* Features Section */}
-        <div className="mt-12 text-center">
-          <h2 className="text-2xl font-bold mb-8 text-slate-800 dark:text-slate-200">SQL Formatter Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Smart Formatting</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Intelligent indentation and line breaks for better readability</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Fast Processing</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Lightning-fast formatting for queries of any size</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Easy Copy</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">One-click copy formatted SQL to clipboard</p>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   );

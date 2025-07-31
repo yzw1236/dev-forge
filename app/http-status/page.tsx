@@ -219,39 +219,7 @@ export default function HTTPStatusLookup() {
           </div>
         )}
 
-        {/* Features Section */}
-        <div className="mt-12 text-center">
-          <h2 className="text-2xl font-bold mb-8 text-slate-800 dark:text-slate-200">HTTP Status Lookup Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-cyan-100 dark:bg-cyan-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Smart Search</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Search by code, message, or description</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Category Filter</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Filter by status code categories</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Detailed Info</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Comprehensive descriptions and meanings</p>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   );
