@@ -111,12 +111,12 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 
 ### Crontab Generator/Validator
 - Select a common template or enter a custom crontab expression.
-- Click "校验/解释" to validate and explain the expression.
+- Click "Validate/Explain" to validate and explain the expression.
 - One-click copy and error feedback.
 
 ### Data Structure Converter
 - Paste JSON, YAML, or XML; format is auto-detected.
-- Select output format (JSON/YAML/XML) and click "转换".
+- Select output format (JSON/YAML/XML) and click "Convert".
 - One-click copy for the result, with error feedback.
 
 ### Image to Base64
@@ -132,7 +132,7 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 
 ### Code Beautifier
 - Select a language (JS, TS, JSON, HTML, CSS, Python, Java, C/C++, Go, Shell, etc.).
-- Paste or enter code, then click "格式化" to beautify.
+- Paste or enter code, then click "Format" to beautify.
 - One-click copy for the beautified result, with error feedback.
 
 ## Tech Stack

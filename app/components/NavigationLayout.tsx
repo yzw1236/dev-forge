@@ -213,7 +213,7 @@ export default function NavigationLayout({
               <svg className="w-5 h-5 mr-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4a1 1 0 011-1h8a1 1 0 011 1v12m-4 4h-4a1 1 0 01-1-1v-4h6v4a1 1 0 01-1 1z" />
               </svg>
-              <span className="font-medium">图片转 Base64</span>
+              <span className="font-medium">Image to Base64</span>
             </a>
             <a 
               href="/convert" 
@@ -223,7 +223,7 @@ export default function NavigationLayout({
               <svg className="w-5 h-5 mr-3 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              <span className="font-medium">数据结构转换</span>
+              <span className="font-medium">Data Converter</span>
             </a>
             <a 
               href="/crontab" 
@@ -233,7 +233,7 @@ export default function NavigationLayout({
               <svg className="w-5 h-5 mr-3 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              <span className="font-medium">Crontab 工具</span>
+              <span className="font-medium">Crontab Tool</span>
             </a>
             <a 
               href="/beautifier" 
@@ -243,7 +243,7 @@ export default function NavigationLayout({
               <svg className="w-5 h-5 mr-3 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              <span className="font-medium">代码美化器</span>
+              <span className="font-medium">Code Beautifier</span>
             </a>
           </div>
           
