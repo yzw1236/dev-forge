@@ -53,7 +53,7 @@ export default function CodeBeautifier() {
 
   const handleFormat = () => {
     if (!input.trim()) {
-      setError("请输入代码");
+      setError("Please enter code");
       setOutput("");
       return;
     }
@@ -62,7 +62,7 @@ export default function CodeBeautifier() {
       setOutput(formatted);
       setError("");
     } catch (e) {
-      setError("格式化失败，请检查代码格式");
+      setError("Formatting failed, please check code format");
       setOutput("");
     }
   };
@@ -86,16 +86,16 @@ export default function CodeBeautifier() {
       <div className="max-w-5xl mx-auto">
         <header className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">
-            代码美化器
+            Code Beautifier
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            支持多种主流编程语言的代码格式化与美化，提升代码可读性
+            Supports code formatting and beautification for multiple popular programming languages, improving code readability
           </p>
         </header>
 
         {/* 语言选择 */}
         <div className="flex flex-wrap gap-2 justify-center mb-6">
-          <span className="text-slate-700 dark:text-slate-300 font-medium">语言：</span>
+          <span className="text-slate-700 dark:text-slate-300 font-medium">Language:</span>
           {languages.map(l => (
             <button
               key={l.value}
@@ -116,19 +116,19 @@ export default function CodeBeautifier() {
                 <svg className="w-6 h-6 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                输入代码
+                Input Code
               </h2>
               <button
                 onClick={handleClear}
                 className="px-3 py-1 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-lg text-sm"
               >
-                清空
+                Clear
               </button>
             </div>
             <textarea
               value={input}
               onChange={e => setInput(e.target.value)}
-              placeholder="粘贴或输入待美化的代码"
+              placeholder="Paste or enter code to beautify"
               className="w-full h-64 p-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg font-mono text-sm resize-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
             />
             {error && (
@@ -145,27 +145,27 @@ export default function CodeBeautifier() {
                 <svg className="w-6 h-6 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                美化结果
+                Beautified Result
               </h2>
               <button
                 onClick={handleFormat}
                 disabled={!input.trim()}
                 className="px-3 py-1 bg-indigo-500 hover:bg-indigo-600 disabled:bg-slate-300 disabled:cursor-not-allowed text-white rounded-lg text-sm"
               >
-                格式化
+                Format
               </button>
               <button
                 onClick={handleCopy}
                 disabled={!output}
                 className="px-3 py-1 bg-blue-500 hover:bg-blue-600 disabled:bg-slate-300 disabled:cursor-not-allowed text-white rounded-lg text-sm ml-2"
               >
-                复制
+                Copy
               </button>
             </div>
             <textarea
               value={output}
               readOnly
-              placeholder="美化后的代码将在此显示"
+              placeholder="Beautified code will be displayed here"
               className="w-full h-64 p-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg font-mono text-sm resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
             />
           </div>
@@ -173,7 +173,7 @@ export default function CodeBeautifier() {
 
         {/* 说明区 */}
         <div className="mt-12 text-center">
-          <h2 className="text-2xl font-bold mb-8 text-slate-800 dark:text-slate-200">代码美化器特性</h2>
+          <h2 className="text-2xl font-bold mb-8 text-slate-800 dark:text-slate-200">Code Beautifier Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -181,8 +181,8 @@ export default function CodeBeautifier() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">多语言支持</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">支持 JS、TS、JSON、HTML、CSS、Python、Java、C/C++、Go、Shell 等</p>
+              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">Multi-language Support</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400">Supports JS, TS, JSON, HTML, CSS, Python, Java, C/C++, Go, Shell, etc.</p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -190,8 +190,8 @@ export default function CodeBeautifier() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">一键格式化</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">一键美化代码，提升可读性</p>
+              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">One-click Formatting</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400">One-click beautify code, improve readability</p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-pink-100 dark:bg-pink-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -199,8 +199,8 @@ export default function CodeBeautifier() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">一键复制</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">美化结果支持一键复制</p>
+              <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-slate-200">One-click Copy</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400">Beautified result supports one-click copy</p>
             </div>
           </div>
         </div>
