@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface HashAlgorithm {
   name: string;
@@ -14,7 +14,6 @@ const hashAlgorithms: HashAlgorithm[] = [
   { name: "sha256", displayName: "SHA-256", color: "text-blue-500" },
   { name: "sha512", displayName: "SHA-512", color: "text-green-500" },
   { name: "sha384", displayName: "SHA-384", color: "text-purple-500" },
-  { name: "sha224", displayName: "SHA-224", color: "text-indigo-500" },
 ];
 
 export default function HashCalculator() {
@@ -22,6 +21,16 @@ export default function HashCalculator() {
   const [selectedAlgorithms, setSelectedAlgorithms] = useState<string[]>(["md5", "sha256"]);
   const [hashResults, setHashResults] = useState<{ [key: string]: string }>({});
   const [isCalculating, setIsCalculating] = useState(false);
+
+  // Clean up any invalid algorithms from selectedAlgorithms on mount
+  useEffect(() => {
+    const validAlgorithms = selectedAlgorithms.filter(algorithm => 
+      hashAlgorithms.some(alg => alg.name === algorithm)
+    );
+    if (validAlgorithms.length !== selectedAlgorithms.length) {
+      setSelectedAlgorithms(validAlgorithms);
+    }
+  }, []);
 
   const calculateHash = async (text: string, algorithm: string): Promise<string> => {
     const encoder = new TextEncoder();
@@ -34,9 +43,6 @@ export default function HashCalculator() {
       case "sha1":
         const sha1Buffer = await crypto.subtle.digest("SHA-1", data);
         return Array.from(new Uint8Array(sha1Buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
-      case "sha224":
-        const sha224Buffer = await crypto.subtle.digest("SHA-224", data);
-        return Array.from(new Uint8Array(sha224Buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
       case "sha256":
         const sha256Buffer = await crypto.subtle.digest("SHA-256", data);
         return Array.from(new Uint8Array(sha256Buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
@@ -78,9 +84,19 @@ export default function HashCalculator() {
     const results: { [key: string]: string } = {};
 
     try {
-      for (const algorithm of selectedAlgorithms) {
-        const hash = await calculateHash(inputText, algorithm);
-        results[algorithm] = hash;
+      // Filter out any invalid algorithms
+      const validAlgorithms = selectedAlgorithms.filter(algorithm => 
+        hashAlgorithms.some(alg => alg.name === algorithm)
+      );
+      
+      for (const algorithm of validAlgorithms) {
+        try {
+          const hash = await calculateHash(inputText, algorithm);
+          results[algorithm] = hash;
+        } catch (error) {
+          console.error(`Error calculating ${algorithm} hash:`, error);
+          results[algorithm] = `Error: ${error instanceof Error ? error.message : 'Unknown error'}`;
+        }
       }
       setHashResults(results);
     } catch (error) {
