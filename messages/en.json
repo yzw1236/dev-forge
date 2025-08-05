@@ -1,0 +1,70 @@
+{
+  "navigation": {
+    "brand": "bbj dev-forge",
+    "subtitle": "Developer Tools",
+    "dashboard": "Dashboard",
+    "jsonTools": "JSON Tools",
+    "base64Encoder": "Base64 Encoder/Decoder",
+    "timestamp": "Timestamp",
+    "crontabTool": "Crontab Tool",
+    "hashCalculator": "Hash Calculator",
+    "jwtDecoder": "JWT Decoder",
+    "uuidGenerator": "UUID Generator",
+    "passwordGenerator": "Password Generator",
+    "urlTool": "URL Tool",
+    "codeBeautifier": "Code Beautifier",
+    "colorConverter": "Color Converter",
+    "baseConverter": "Base Converter",
+    "sqlFormatter": "SQL Formatter",
+    "imageToBase64": "Image to Base64",
+    "dataConverter": "Data Converter",
+    "httpStatusLookup": "HTTP Status Lookup",
+    "userAgentParser": "User-Agent Parser"
+  },
+  "common": {
+    "toggleNavigation": "Toggle navigation",
+    "builtWith": "Built with ❤️ by bbj",
+    "viewOnGitHub": "View on GitHub",
+    "copy": "Copy",
+    "clear": "Clear",
+    "generate": "Generate",
+    "convert": "Convert",
+    "encode": "Encode",
+    "decode": "Decode",
+    "format": "Format",
+    "calculate": "Calculate",
+    "parse": "Parse",
+    "download": "Download",
+    "upload": "Upload",
+    "select": "Select",
+    "input": "Input",
+    "output": "Output",
+    "settings": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "openTool": "Open Tool"
+  },
+  "home": {
+    "title": "Dev Forge - Developer Tools",
+    "description": "A collection of useful developer tools for better productivity",
+    "welcome": "Welcome to Dev Forge",
+    "subtitle": "Your Ultimate Developer Toolkit",
+    "features": "Features",
+    "tools": "Tools",
+    "getStarted": "Get Started"
+  },
+  "errors": {
+    "invalidInput": "Invalid input",
+    "somethingWentWrong": "Something went wrong",
+    "tryAgain": "Try again",
+    "notFound": "Not found"
+  },
+  "success": {
+    "copied": "Copied to clipboard",
+    "generated": "Generated",
+    "converted": "Converted",
+    "formatted": "Formatted"
+  }
+} 

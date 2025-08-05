@@ -1,0 +1,70 @@
+{
+  "navigation": {
+    "brand": "bbj dev-forge",
+    "subtitle": "开发者工具",
+    "dashboard": "仪表板",
+    "jsonTools": "JSON 工具",
+    "base64Encoder": "Base64 编码器/解码器",
+    "timestamp": "时间戳",
+    "crontabTool": "Crontab 工具",
+    "hashCalculator": "哈希计算器",
+    "jwtDecoder": "JWT 解码器",
+    "uuidGenerator": "UUID 生成器",
+    "passwordGenerator": "密码生成器",
+    "urlTool": "URL 工具",
+    "codeBeautifier": "代码美化器",
+    "colorConverter": "颜色转换器",
+    "baseConverter": "进制转换器",
+    "sqlFormatter": "SQL 格式化器",
+    "imageToBase64": "图片转 Base64",
+    "dataConverter": "数据转换器",
+    "httpStatusLookup": "HTTP 状态查询",
+    "userAgentParser": "User-Agent 解析器"
+  },
+  "common": {
+    "toggleNavigation": "切换导航",
+    "builtWith": "由 bbj 用 ❤️ 构建",
+    "viewOnGitHub": "在 GitHub 上查看",
+    "copy": "复制",
+    "clear": "清除",
+    "generate": "生成",
+    "convert": "转换",
+    "encode": "编码",
+    "decode": "解码",
+    "format": "格式化",
+    "calculate": "计算",
+    "parse": "解析",
+    "download": "下载",
+    "upload": "上传",
+    "select": "选择",
+    "input": "输入",
+    "output": "输出",
+    "settings": "设置",
+    "language": "语言",
+    "theme": "主题",
+    "darkMode": "深色模式",
+    "lightMode": "浅色模式",
+    "openTool": "打开工具"
+  },
+  "home": {
+    "title": "Dev Forge - 开发者工具",
+    "description": "提高生产力的有用开发者工具集合",
+    "welcome": "欢迎使用 Dev Forge",
+    "subtitle": "您的终极开发者工具集",
+    "features": "功能特色",
+    "tools": "工具",
+    "getStarted": "开始使用"
+  },
+  "errors": {
+    "invalidInput": "无效输入",
+    "somethingWentWrong": "出现错误",
+    "tryAgain": "请重试",
+    "notFound": "未找到"
+  },
+  "success": {
+    "copied": "已复制到剪贴板",
+    "generated": "已生成",
+    "converted": "已转换",
+    "formatted": "已格式化"
+  }
+} 
