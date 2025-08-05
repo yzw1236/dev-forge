@@ -24,6 +24,7 @@
   "common": {
     "toggleNavigation": "Toggle navigation",
     "builtWith": "Built with ❤️ by bbj",
+    "viewOnGitHub": "View on GitHub",
     "copy": "Copy",
     "clear": "Clear",
     "generate": "Generate",

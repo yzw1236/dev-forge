@@ -24,6 +24,7 @@
   "common": {
     "toggleNavigation": "切换导航",
     "builtWith": "由 bbj 用 ❤️ 构建",
+    "viewOnGitHub": "在 GitHub 上查看",
     "copy": "复制",
     "clear": "清除",
     "generate": "生成",
