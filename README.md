@@ -1,202 +1,175 @@
-# Dev Forge
+# Dev Forge - Developer Tools
 
-An online toolbox designed for developers, built with React (Next.js), aiming to improve development efficiency and simplify daily development tasks. The project is deployed on a Serverless platform, supporting high availability and elastic scaling.
+A comprehensive collection of free online developer tools designed to boost your productivity. Built with Next.js, TypeScript, and Tailwind CSS.
 
-🌐 **Live Demo**: [https://001236.xyz](https://001236.xyz)
+## 🚀 Features
 
-## Feature Overview
+- **JSON Formatter & Validator** - Format and validate JSON data with syntax highlighting
+- **Base64 Encoder/Decoder** - Encode text to Base64 and decode Base64 strings
+- **JWT Decoder** - Decode and verify JSON Web Tokens with detailed payload information
+- **Hash Calculator** - Generate MD5, SHA1, SHA256, SHA512 hashes
+- **UUID Generator** - Generate random UUIDs for your projects
+- **Password Generator** - Create strong, secure passwords with customizable options
+- **Timestamp Converter** - Convert between Unix timestamps and human-readable dates
+- **Crontab Tool** - Generate, validate, and understand cron expressions
+- **URL Tool** - Encode and decode URLs with proper URL encoding
+- **Code Beautifier** - Format and beautify code in various programming languages
+- **Color Converter** - Convert between HEX, RGB, HSL, and other color formats
+- **Base Converter** - Convert numbers between different number bases
+- **SQL Formatter** - Format and beautify SQL queries with proper indentation
+- **Image to Base64** - Convert images to Base64 strings for web embedding
+- **Data Converter** - Convert between various data formats and units
+- **HTTP Status Lookup** - Find detailed information about HTTP status codes
+- **User-Agent Parser** - Parse and analyze User-Agent strings
 
-| Tool                     | Description                                                      |
-|--------------------------|------------------------------------------------------------------|
-| Timestamp Converter      | Convert between timestamps and dates                              |
-| JSON Formatter           | Beautify and validate JSON data                                   |
-| SQL Formatter            | Beautify and format SQL statements                                |
-| Base64 Encoder/Decoder   | Encode/decode text and Base64                                     |
-| URL Encoder/Decoder      | Encode/decode URL text                                            |
-| UUID/GUID Generator      | Generate unique identifiers (UUID/GUID)                           |
-| Password Generator       | Generate secure passwords with custom rules                       |
-| JWT Decoder              | Parse and analyze JWT tokens                                      |
-| Hash Calculator          | Calculate hashes (MD5, SHA-1, SHA-256, etc.)                     |
-| Color Format Converter   | Convert between HEX, RGB, HSL, HSV, CMYK                          |
-| Base Converter           | Convert numbers between binary, octal, decimal, hexadecimal       |
-| HTTP Status Lookup       | Search and explain HTTP status codes                              |
-| Crontab Generator        | Generate, validate, and explain crontab expressions               |
-| Data Structure Converter | Convert between JSON, YAML, XML                                   |
-| Image to Base64          | Convert images to Base64 strings                                  |
-| User-Agent Parser        | Parse and analyze User-Agent strings                              |
-| Code Beautifier          | Format and beautify code for various languages                    |
+## 🌐 SEO Optimized
 
-## Implemented Features
+This application is fully optimized for search engines with:
 
-- Timestamp Converter: Convert between timestamps and dates.
-- JSON Formatter & Validator: Beautify and validate JSON data for better readability.
-- SQL Formatter: Beautify and format SQL statements with intelligent indentation and proper spacing.
-- Base64 Encoder/Decoder: Convert between text and Base64 with bidirectional functionality.
-- URL Encoder/Decoder: Encode text for URLs or decode URL-encoded text back to readable format.
-- UUID/GUID Generator: Generate unique identifiers with support for both UUID and GUID formats.
-- Password Generator: Generate secure passwords with customizable length, character types, and strength indicators.
-- JWT Decoder: Parse and display JWT contents with token analysis and validation.
-- Hash Calculator: Support multiple hash algorithms (MD5, SHA-1, SHA-256, SHA-512, SHA-384, SHA-224).
-- Color Format Converter: Convert between RGB, HEX, HSL, HSV, and CMYK color formats.
-- Base Converter: Convert numbers between binary, octal, decimal, and hexadecimal bases.
-- HTTP Status Code Lookup: Search and understand HTTP status codes with detailed descriptions.
-- Crontab Generator/Validator: Generate, validate, and explain Linux crontab expressions with templates.
-- Data Structure Converter: Convert between JSON, YAML, and XML formats with auto-detection.
-- Image to Base64: Convert image files to Base64 strings with preview and one-click copy.
-- User-Agent Parser: Parse and analyze User-Agent strings to extract browser, OS, and device information.
-- Code Beautifier: Format and beautify code for various mainstream programming languages.
+- **Comprehensive Meta Tags** - Proper titles, descriptions, and keywords for all pages
+- **Open Graph Tags** - Rich social media previews
+- **Twitter Cards** - Optimized Twitter sharing
+- **Structured Data** - JSON-LD schema markup for better search understanding
+- **Sitemap Generation** - Automatic XML sitemap for search engine indexing
+- **Robots.txt** - Proper crawling instructions
+- **Canonical URLs** - Prevent duplicate content issues
+- **Multilingual Support** - SEO optimized for both English and Chinese
+- **Performance Optimized** - Fast loading times for better search rankings
 
-### 📝 Upcoming Features
-- Docker deployment support
-- More code beautifier language support
-- More data structure format support (e.g., TOML, CSV)
-- More developer utilities (suggestions welcome!)
+## 🛠️ Tech Stack
 
-## Usage
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Internationalization**: next-intl
+- **Deployment**: Vercel
+- **SEO**: Next.js Metadata API
 
-### Timestamp Converter
-- Enter a date (e.g., `2024-06-01`) or a timestamp (in seconds or milliseconds).
-- Click "Convert" to see the result:
-  - If you enter a date, you'll get the corresponding timestamp (in milliseconds).
-  - If you enter a timestamp, you'll get the corresponding ISO date string.
-- Errors are shown if the input is invalid.
+## 📱 PWA Ready
 
-### JSON Formatter & Validator
-- Paste or type your JSON into the textarea.
-- Click "Format & Validate" to beautify the JSON and check for errors.
-- If the JSON is valid, it will be formatted and displayed below.
-- If invalid, an error message will be shown.
+- Web App Manifest
+- Service Worker ready
+- Offline capability
+- Installable on mobile devices
 
-### SQL Formatter
-- Paste or type your SQL query into the input textarea.
-- Click "Format SQL" to beautify the query with proper indentation and spacing.
-- The formatted SQL will be displayed in the output area with improved readability.
-- Use the "Copy" button to copy the formatted SQL to your clipboard.
+## 🚀 Getting Started
 
-### Base64 Encoder/Decoder
-- Switch between Encode and Decode modes using the toggle buttons.
-- Enter text to encode to Base64 or paste Base64 string to decode.
-- Click the respective button to perform the conversion.
-- Use "Copy" to copy the result or "Swap" to move the result to input.
+### Prerequisites
 
-### URL Encoder/Decoder
-- Switch between Encode and Decode modes using the toggle buttons.
-- Enter text to encode for URLs or paste URL-encoded text to decode.
-- Click the respective button to perform the conversion.
-- Use "Copy" to copy the result or "Swap" to move the result to input.
+- Node.js 18+ 
+- npm or yarn
 
-### UUID/GUID Generator
-- Choose between UUID (lowercase) and GUID (uppercase) formats.
-- Set the number of UUIDs to generate (1-100).
-- Click "Generate" to create unique identifiers.
-- Copy individual UUIDs or all at once using the copy buttons.
+### Installation
 
-### Password Generator
-- Adjust password length using the slider (8-64 characters).
-- Select character types: uppercase, lowercase, numbers, and symbols.
-- Use advanced options to exclude similar or ambiguous characters.
-- View password strength indicator and copy the generated password.
-
-### JWT Decoder
-- Paste your JWT token in the input field.
-- Click "Decode JWT" to view header, payload, and signature.
-- View token information including expiration and issuance dates.
-- Copy individual sections (header, payload, signature) as needed.
-
-### Hash Calculator
-- Enter text to calculate hash values.
-- Select from multiple algorithms: MD5, SHA-1, SHA-256, SHA-512, SHA-384, SHA-224.
-- Use "Select All" or "Select None" for bulk operations.
-- Copy individual hash results with one click.
-
-### Color Format Converter
-- Enter color in any format (hex, RGB, HSL) or use the color picker.
-- View real-time conversion to all supported formats.
-- See color preview and copy any format value.
-- Supports HEX, RGB, HSL, HSV, and CMYK formats.
-
-### Base Converter
-- Select input base (binary, octal, decimal, hexadecimal).
-- Enter number and see real-time conversion to all bases.
-- Copy individual base results with one click.
-- Includes quick examples for common conversions.
-
-### HTTP Status Code Lookup
-- Search status codes by number, message, or description.
-- Filter by categories (Informational, Success, Redirection, Client Error, Server Error).
-- View detailed information for each status code.
-- Click on any status code for comprehensive details.
-
-### Crontab Generator/Validator
-- Select a common template or enter a custom crontab expression.
-- Click "Validate/Explain" to validate and explain the expression.
-- One-click copy and error feedback.
-
-### Data Structure Converter
-- Paste JSON, YAML, or XML; format is auto-detected.
-- Select output format (JSON/YAML/XML) and click "Convert".
-- One-click copy for the result, with error feedback.
-
-### Image to Base64
-- Drag & drop or click to upload an image file.
-- Preview the image and get the Base64 string instantly.
-- One-click copy for the Base64 result.
-
-### User-Agent Parser
-- Paste User-Agent string to analyze browser and device information.
-- Extract browser, OS, device type, and rendering engine details.
-- Detect mobile, tablet, desktop, and bot devices.
-- View version information for browsers and operating systems.
-
-### Code Beautifier
-- Select a language (JS, TS, JSON, HTML, CSS, Python, Java, C/C++, Go, Shell, etc.).
-- Paste or enter code, then click "Format" to beautify.
-- One-click copy for the beautified result, with error feedback.
-
-## Tech Stack
-
-- Frontend: Next.js (React + TypeScript)
-- Styling: Tailwind CSS
-- Deployment: Serverless
-
-## Getting Started
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/your-username/dev-forge.git
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-## Deployment
-
-### Online Access
-The application is currently deployed and accessible at: [https://001236.xyz](https://001236.xyz)
-
-### Docker Deployment (Coming Soon)
-This project will support Docker deployment for easy containerized deployment:
-
+1. Clone the repository:
 ```bash
-# Build the Docker image
-docker build -t dev-forge .
-
-# Run the container
-docker run -p 3000:3000 dev-forge
+git clone https://github.com/yzw1236/dev-forge.git
+cd dev-forge
 ```
 
-### Serverless Deployment
-This project is designed for Serverless architecture deployment, supporting high availability and elastic scaling. Detailed deployment instructions will be added in future documentation.
+2. Install dependencies:
+```bash
+npm install
+```
 
-## Contribution
+3. Run the development server:
+```bash
+npm run dev
+```
 
-Feel free to submit Issues and PRs to help improve the toolbox!
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📦 Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+## 🌍 Internationalization
+
+The application supports multiple languages:
+- English (en)
+- Chinese (zh)
+
+Language switching is available in the navigation.
+
+## 🔧 Development
+
+### Project Structure
+
+```
+dev-forge/
+├── app/
+│   ├── [locale]/          # Localized pages
+│   │   ├── json/          # JSON formatter tool
+│   │   ├── base64/        # Base64 encoder/decoder
+│   │   ├── jwt/           # JWT decoder
+│   │   └── ...            # Other tools
+│   ├── components/        # Reusable components
+│   ├── lib/              # Utility functions
+│   └── layout.tsx        # Root layout
+├── messages/             # Translation files
+├── public/              # Static assets
+└── scripts/             # Build scripts
+```
+
+### Adding New Tools
+
+1. Create a new directory in `app/[locale]/`
+2. Add the tool page with proper SEO metadata
+3. Update the navigation in the home page
+4. Add translations to `messages/en.json` and `messages/zh.json`
+5. Update the sitemap configuration
+
+## 📊 SEO Features
+
+### Meta Tags
+- Dynamic titles and descriptions
+- Proper keywords for each tool
+- Open Graph and Twitter Card support
+- Canonical URLs to prevent duplicate content
+
+### Structured Data
+- JSON-LD schema markup
+- WebApplication schema for better search understanding
+- Proper author and publisher information
+
+### Performance
+- Server-side rendering for better SEO
+- Optimized images and assets
+- Fast loading times
+- Mobile-friendly responsive design
+
+### Search Engine Optimization
+- XML sitemap generation
+- Robots.txt configuration
+- Proper heading hierarchy
+- Semantic HTML structure
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Icons from [Heroicons](https://heroicons.com/)
+- Fonts from [Google Fonts](https://fonts.google.com/)
+
+## 📞 Support
+
+If you have any questions or need help, please open an issue on GitHub.
 
 ---
 
-> This project is dedicated to providing developers with an all-in-one efficient toolkit and will be continuously updated.
+**Dev Forge** - Your ultimate developer toolkit for better productivity! 🚀
