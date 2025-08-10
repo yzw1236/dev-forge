@@ -4,6 +4,30 @@ An online toolbox designed for developers, built with React (Next.js), aiming to
 
 🌐 **Live Demo**: [https://001236.xyz](https://001236.xyz)
 
+## 🚀 SEO Optimized
+
+This project includes comprehensive SEO optimizations for better search engine visibility and user experience:
+
+### ✅ SEO Features Implemented
+- **Dynamic metadata generation** for all tools and pages
+- **Structured data (JSON-LD)** for rich search results
+- **Open Graph & Twitter Cards** for social media sharing
+- **Automatic sitemap generation** (`/sitemap.xml`)
+- **Robots.txt** configuration
+- **Internationalization SEO** (English & Chinese)
+- **Core Web Vitals optimization**
+- **PWA support** with web app manifest
+- **Security headers** and performance optimizations
+
+### 📊 SEO Benefits
+- Better search engine rankings
+- Enhanced social media sharing
+- Improved mobile experience
+- Faster page loading
+- Accessibility compliance
+
+📖 **Detailed SEO Guide**: [SEO_OPTIMIZATION.md](./SEO_OPTIMIZATION.md)
+
 ## Feature Overview
 
 | Tool                     | Description                                                      |
