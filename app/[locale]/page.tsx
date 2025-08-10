@@ -44,15 +44,15 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
           <h2 id="tools-heading" className="sr-only">Developer Tools</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {tools.map((tool, index) => (
-              <article key={index} className="group">
+              <article key={index} className="group h-full">
                 <Link
                   href={tool.href}
-                  className="block p-6 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-1"
+                  className="block p-4 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col"
                   aria-describedby={`tool-description-${index}`}
                 >
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-start space-x-3 flex-1">
                     <div className="flex-shrink-0">
-                      <svg className={`w-8 h-8 ${tool.color}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <svg className={`w-6 h-6 ${tool.color}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={tool.icon} />
                       </svg>
                     </div>
@@ -60,7 +60,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
                       <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                         {tool.text}
                       </h3>
-                      <p id={`tool-description-${index}`} className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                      <p id={`tool-description-${index}`} className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                         {tool.description}
                       </p>
                     </div>
