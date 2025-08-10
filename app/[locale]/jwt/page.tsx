@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
+import Breadcrumbs from '../../components/Breadcrumbs';
 import { useState } from "react";
 
 interface JWTPayload {
@@ -19,13 +21,14 @@ interface DecodedJWT {
 }
 
 export default function JWTDecoder() {
+  const t = useTranslations();
   const [jwtToken, setJwtToken] = useState("");
   const [decodedJWT, setDecodedJWT] = useState<DecodedJWT | null>(null);
   const [error, setError] = useState("");
 
   const decodeJWT = (token: string) => {
     if (!token.trim()) {
-      setError("Please enter a JWT token");
+      setError(t('errors.invalidInput'));
       setDecodedJWT(null);
       return;
     }
@@ -53,7 +56,7 @@ export default function JWTDecoder() {
       setDecodedJWT(decoded);
       setError("");
     } catch (err) {
-      setError("Failed to decode JWT. Please check if the token is valid.");
+      setError(t('errors.somethingWentWrong'));
       setDecodedJWT(null);
     }
   };
@@ -106,14 +109,16 @@ export default function JWTDecoder() {
 
   return (
     <div className="p-4 md:p-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
+        <Breadcrumbs />
+        
         {/* Header */}
-        <header className="text-center mb-8">
+        <header className="text-center mb-8 mt-4">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
-            JWT Decoder
+            {t('tools.jwtDecoder.title')}
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Decode and analyze JSON Web Tokens to view their contents and metadata
+            {t('tools.jwtDecoder.description')}
           </p>
         </header>
 
@@ -132,13 +137,13 @@ export default function JWTDecoder() {
                 disabled={!jwtToken.trim()}
                 className="px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 disabled:from-slate-400 disabled:to-slate-500 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg disabled:cursor-not-allowed text-sm"
               >
-                Decode JWT
+                {t('common.decode')} JWT
               </button>
               <button
                 onClick={handleClear}
                 className="px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-medium rounded-lg transition-all duration-200 text-sm"
               >
-                Clear
+                {t('common.clear')}
               </button>
             </div>
           </div>
@@ -146,8 +151,7 @@ export default function JWTDecoder() {
           <textarea
             value={jwtToken}
             onChange={(e) => setJwtToken(e.target.value)}
-            placeholder="Paste your JWT token here...
-Example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+            placeholder="Paste your JWT token here..."
             className="w-full h-32 p-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg font-mono text-sm resize-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-200"
           />
         </div>
@@ -180,7 +184,7 @@ Example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZS
                   onClick={() => handleCopy(formatJSON(decodedJWT.header))}
                   className="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white text-xs rounded-md transition-all duration-200"
                 >
-                  Copy
+                  {t('common.copy')}
                 </button>
               </div>
               <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg p-3 max-h-64 overflow-auto">
@@ -203,7 +207,7 @@ Example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZS
                   onClick={() => handleCopy(formatJSON(decodedJWT.payload))}
                   className="px-3 py-1 bg-green-500 hover:bg-green-600 text-white text-xs rounded-md transition-all duration-200"
                 >
-                  Copy
+                  {t('common.copy')}
                 </button>
               </div>
               <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg p-3 max-h-64 overflow-auto">
@@ -226,7 +230,7 @@ Example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZS
                   onClick={() => handleCopy(decodedJWT.signature)}
                   className="px-3 py-1 bg-purple-500 hover:bg-purple-600 text-white text-xs rounded-md transition-all duration-200"
                 >
-                  Copy
+                  {t('common.copy')}
                 </button>
               </div>
               <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg p-3 max-h-64 overflow-auto">
@@ -259,8 +263,6 @@ Example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZS
             </div>
           </div>
         )}
-
-
       </div>
     </div>
   );

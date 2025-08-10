@@ -1,8 +1,12 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
+import Breadcrumbs from '../../components/Breadcrumbs';
+
 import { useState } from "react";
 
 export default function SQLFormatter() {
+  const t = useTranslations();
   const [inputSQL, setInputSQL] = useState("");
   const [formattedSQL, setFormattedSQL] = useState("");
   const [error, setError] = useState("");
@@ -104,27 +108,28 @@ export default function SQLFormatter() {
 
   return (
     <div className="p-4 md:p-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
+        <Breadcrumbs />
         {/* Header */}
-        <header className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-            SQL Formatter
+        <header className="text-center mb-8 mt-4">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            {t('tools.sql.title')}
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Beautify and format your SQL queries for better readability and maintainability
+            {t('tools.sql.description')}
           </p>
         </header>
 
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Input Section */}
+          {/* {t('common.input')} Section */}
           <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-6">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200 flex items-center">
                 <svg className="w-6 h-6 mr-2 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                Input SQL
+                {t('common.input')} SQL
               </h2>
               <div className="flex space-x-2">
                 <button
@@ -148,7 +153,7 @@ export default function SQLFormatter() {
                   onClick={handleClear}
                   className="px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-medium rounded-lg transition-all duration-200 text-sm"
                 >
-                  Clear
+                  {t('common.clear')}
                 </button>
               </div>
             </div>
@@ -163,7 +168,7 @@ SELECT id, name, email FROM users WHERE status = 'active' AND created_at > '2024
             />
           </div>
 
-          {/* Output Section */}
+          {/* {t('common.output')} Section */}
           <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-6">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200 flex items-center">
@@ -180,7 +185,7 @@ SELECT id, name, email FROM users WHERE status = 'active' AND created_at > '2024
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
-                  Copy
+                  {t('common.copy')}
                 </button>
               )}
             </div>

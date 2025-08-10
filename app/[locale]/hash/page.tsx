@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations } from 'next-intl';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 interface HashAlgorithm {
   name: string;
@@ -17,6 +19,7 @@ const hashAlgorithms: HashAlgorithm[] = [
 ];
 
 export default function HashCalculator() {
+  const t = useTranslations();
   const [inputText, setInputText] = useState("");
   const [selectedAlgorithms, setSelectedAlgorithms] = useState<string[]>(["md5", "sha256"]);
   const [hashResults, setHashResults] = useState<{ [key: string]: string }>({});
@@ -138,13 +141,15 @@ export default function HashCalculator() {
   return (
     <div className="p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
+        <Breadcrumbs />
+        
         {/* Header */}
-        <header className="text-center mb-8">
+        <header className="text-center mb-8 mt-4">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
-            Hash Calculator
+            {t('tools.hashCalculator.title')}
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Calculate cryptographic hashes using various algorithms
+            {t('tools.hashCalculator.description')}
           </p>
         </header>
 
@@ -155,7 +160,7 @@ export default function HashCalculator() {
               <svg className="w-6 h-6 mr-2 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              Input Text
+              {t('common.input')}
             </h2>
             <div className="flex space-x-2">
               <button
@@ -169,17 +174,17 @@ export default function HashCalculator() {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Calculating...
+                    {t('common.calculate')}...
                   </div>
                 ) : (
-                  "Calculate Hash"
+                  t('common.calculate') + " Hash"
                 )}
               </button>
               <button
                 onClick={handleClear}
                 className="px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-medium rounded-lg transition-all duration-200 text-sm"
               >
-                Clear
+                {t('common.clear')}
               </button>
             </div>
           </div>
@@ -187,7 +192,7 @@ export default function HashCalculator() {
           <textarea
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
-            placeholder="Enter text to calculate hash..."
+            placeholder={t('common.input') + "..."}
             className="w-full h-32 p-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg font-mono text-sm resize-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-200"
           />
         </div>
@@ -207,13 +212,13 @@ export default function HashCalculator() {
                 onClick={selectAll}
                 className="px-3 py-1 bg-green-500 hover:bg-green-600 text-white text-xs rounded-md transition-all duration-200"
               >
-                Select All
+                {t('common.select')} All
               </button>
               <button
                 onClick={selectNone}
                 className="px-3 py-1 bg-slate-500 hover:bg-slate-600 text-white text-xs rounded-md transition-all duration-200"
               >
-                Select None
+                {t('common.select')} None
               </button>
             </div>
           </div>
@@ -283,7 +288,7 @@ export default function HashCalculator() {
                       onClick={() => handleCopy(hash)}
                       className="ml-4 px-3 py-1 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-md transition-all duration-200 text-xs"
                     >
-                      Copy
+                      {t('common.copy')}
                     </button>
                   </div>
                 );
@@ -291,8 +296,6 @@ export default function HashCalculator() {
             </div>
           </div>
         )}
-
-
       </div>
     </div>
   );

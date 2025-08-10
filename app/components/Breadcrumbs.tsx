@@ -1,42 +1,73 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-interface BreadcrumbsProps {
-  toolName?: string;
-  toolTitle?: string;
-}
-
-export default function Breadcrumbs({ toolName, toolTitle }: BreadcrumbsProps) {
+export default function Breadcrumbs() {
   const t = useTranslations();
   const locale = useLocale();
+  const pathname = usePathname();
 
-  const breadcrumbData = [
+  // Remove locale prefix from pathname
+  const pathWithoutLocale = pathname.replace(/^\/(en|zh)/, '') || '/';
+  
+  // Split path into segments
+  const segments = pathWithoutLocale.split('/').filter(Boolean);
+  
+  // Build breadcrumb items
+  const breadcrumbs = [
     {
-      label: t('navigation.brand'),
+      name: t('navigation.dashboard'),
       href: `/${locale}`,
-      current: !toolName
+      current: segments.length === 0
     }
   ];
 
-  if (toolName && toolTitle) {
-    breadcrumbData.push({
-      label: toolTitle,
-      href: `/${locale}/${toolName}`,
+  // Add tool-specific breadcrumbs
+  if (segments.length > 0) {
+    const toolKey = segments[0];
+    const toolTranslations: Record<string, string> = {
+      'json': t('navigation.jsonTools'),
+      'base64': t('navigation.base64Encoder'),
+      'timestamp': t('navigation.timestamp'),
+      'crontab': t('navigation.crontabTool'),
+      'hash': t('navigation.hashCalculator'),
+      'jwt': t('navigation.jwtDecoder'),
+      'uuid': t('navigation.uuidGenerator'),
+      'password': t('navigation.passwordGenerator'),
+      'url': t('navigation.urlTool'),
+      'beautifier': t('navigation.codeBeautifier'),
+      'color': t('navigation.colorConverter'),
+      'base': t('navigation.baseConverter'),
+      'sql': t('navigation.sqlFormatter'),
+      'image2base64': t('navigation.imageToBase64'),
+      'convert': t('navigation.dataConverter'),
+      'http-status': t('navigation.httpStatusLookup'),
+      'user-agent': t('navigation.userAgentParser')
+    };
+
+    const toolName = toolTranslations[toolKey] || toolKey;
+    breadcrumbs.push({
+      name: toolName,
+      href: `/${locale}/${toolKey}`,
       current: true
     });
   }
 
+  if (breadcrumbs.length <= 1) {
+    return null; // Don't show breadcrumbs on home page
+  }
+
   return (
-    <nav aria-label="Breadcrumb" className="mb-4">
-      <ol className="flex items-center space-x-2 text-sm text-slate-600 dark:text-slate-400">
-        {breadcrumbData.map((item, index) => (
-          <li key={index} className="flex items-center">
+    <nav className="flex" aria-label="Breadcrumb">
+      <ol className="flex items-center space-x-2">
+        {breadcrumbs.map((breadcrumb, index) => (
+          <li key={breadcrumb.href} className="flex items-center">
             {index > 0 && (
               <svg
-                className="w-4 h-4 mx-2 text-slate-400"
+                className="w-4 h-4 text-slate-400 mx-2"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 aria-hidden="true"
@@ -48,19 +79,19 @@ export default function Breadcrumbs({ toolName, toolTitle }: BreadcrumbsProps) {
                 />
               </svg>
             )}
-            {item.current ? (
+            {breadcrumb.current ? (
               <span
-                className="font-medium text-slate-900 dark:text-slate-100"
+                className="text-sm font-medium text-slate-500 dark:text-slate-400"
                 aria-current="page"
               >
-                {item.label}
+                {breadcrumb.name}
               </span>
             ) : (
               <Link
-                href={item.href}
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                href={breadcrumb.href}
+                className="text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
-                {item.label}
+                {breadcrumb.name}
               </Link>
             )}
           </li>

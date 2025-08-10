@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
+import Breadcrumbs from '../../components/Breadcrumbs';
 import { useState, useEffect } from "react";
 
 interface BaseConverter {
@@ -10,6 +12,7 @@ interface BaseConverter {
 }
 
 export default function BaseConverter() {
+  const t = useTranslations();
   const [inputValue, setInputValue] = useState("");
   const [inputBase, setInputBase] = useState<number>(10);
   const [convertedValues, setConvertedValues] = useState<BaseConverter>({
@@ -60,7 +63,7 @@ export default function BaseConverter() {
       });
       setError("");
     } catch (err) {
-      setError("Invalid number for the selected base");
+      setError(t('errors.invalidInput'));
       setConvertedValues({
         binary: "",
         octal: "",
@@ -96,14 +99,16 @@ export default function BaseConverter() {
 
   return (
     <div className="p-4 md:p-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
+        <Breadcrumbs />
+        
         {/* Header */}
-        <header className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-            Base Converter
+        <header className="text-center mb-8 mt-4">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">
+            {t('tools.baseConverter.title')}
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Convert numbers between binary, octal, decimal, and hexadecimal bases
+            {t('tools.baseConverter.description')}
           </p>
         </header>
 
@@ -114,20 +119,20 @@ export default function BaseConverter() {
               <svg className="w-6 h-6 mr-2 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
               </svg>
-              Input Number
+              {t('common.input')} Number
             </h2>
             <button
               onClick={handleClear}
               className="px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-medium rounded-lg transition-all duration-200 text-sm"
             >
-              Clear
+              {t('common.clear')}
             </button>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                Input Base
+                {t('common.input')} Base
               </label>
               <select
                 value={inputBase}
@@ -181,7 +186,7 @@ export default function BaseConverter() {
                 disabled={!convertedValues.binary}
                 className="px-3 py-1 bg-red-500 hover:bg-red-600 disabled:bg-slate-300 disabled:cursor-not-allowed text-white text-xs rounded-md transition-all duration-200"
               >
-                Copy
+                {t('common.copy')}
               </button>
             </div>
             <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg p-3">
@@ -203,7 +208,7 @@ export default function BaseConverter() {
                 disabled={!convertedValues.octal}
                 className="px-3 py-1 bg-orange-500 hover:bg-orange-600 disabled:bg-slate-300 disabled:cursor-not-allowed text-white text-xs rounded-md transition-all duration-200"
               >
-                Copy
+                {t('common.copy')}
               </button>
             </div>
             <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg p-3">
@@ -225,7 +230,7 @@ export default function BaseConverter() {
                 disabled={!convertedValues.decimal}
                 className="px-3 py-1 bg-blue-500 hover:bg-blue-600 disabled:bg-slate-300 disabled:cursor-not-allowed text-white text-xs rounded-md transition-all duration-200"
               >
-                Copy
+                {t('common.copy')}
               </button>
             </div>
             <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg p-3">
@@ -247,7 +252,7 @@ export default function BaseConverter() {
                 disabled={!convertedValues.hexadecimal}
                 className="px-3 py-1 bg-green-500 hover:bg-green-600 disabled:bg-slate-300 disabled:cursor-not-allowed text-white text-xs rounded-md transition-all duration-200"
               >
-                Copy
+                {t('common.copy')}
               </button>
             </div>
             <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg p-3">
@@ -257,8 +262,6 @@ export default function BaseConverter() {
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
   );

@@ -1,5 +1,8 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
+import Breadcrumbs from '../../components/Breadcrumbs';
+
 import { useState } from "react";
 
 const crontabTemplates = [
@@ -25,6 +28,7 @@ function explainCrontab(expr: string) {
 }
 
 export default function CrontabTool() {
+  const t = useTranslations();
   const [input, setInput] = useState("");
   const [result, setResult] = useState("");
   const [error, setError] = useState("");
@@ -69,13 +73,14 @@ export default function CrontabTool() {
 
   return (
     <div className="p-4 md:p-8">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
+        <Breadcrumbs />
         <header className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent">
-            Crontab Generator & Validator
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            {t('tools.crontab.title')}
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Generate, validate, and explain Linux crontab expressions. Includes common templates.
+            {t('tools.crontab.description')}
           </p>
         </header>
 
@@ -115,7 +120,7 @@ export default function CrontabTool() {
                 onClick={handleClear}
                 className="px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-medium rounded-lg transition-all duration-200 text-sm"
               >
-                Clear
+                {t('common.clear')}
               </button>
             </div>
           </div>
@@ -147,7 +152,7 @@ export default function CrontabTool() {
                 onClick={handleCopy}
                 className="px-3 py-1 bg-green-500 hover:bg-green-600 text-white text-xs rounded-md transition-all duration-200"
               >
-                Copy
+                {t('common.copy')}
               </button>
             </div>
             <div className="mb-2 font-mono text-base text-slate-800 dark:text-slate-200">{result}</div>

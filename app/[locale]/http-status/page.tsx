@@ -1,5 +1,8 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
+import Breadcrumbs from '../../components/Breadcrumbs';
+
 import { useState } from "react";
 
 interface HTTPStatus {
@@ -54,6 +57,7 @@ const httpStatusCodes: HTTPStatus[] = [
 ];
 
 export default function HTTPStatusLookup() {
+  const t = useTranslations();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [selectedStatus, setSelectedStatus] = useState<HTTPStatus | null>(null);
@@ -91,14 +95,15 @@ export default function HTTPStatusLookup() {
 
   return (
     <div className="p-4 md:p-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
+        <Breadcrumbs />
         {/* Header */}
-        <header className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-            HTTP Status Code Lookup
+        <header className="text-center mb-8 mt-4">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            {t('tools.httpstatus.title')}
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Search and understand HTTP status codes with detailed descriptions and meanings
+            {t('tools.httpstatus.description')}
           </p>
         </header>
 
@@ -115,7 +120,7 @@ export default function HTTPStatusLookup() {
               onClick={handleClear}
               className="px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-medium rounded-lg transition-all duration-200 text-sm"
             >
-              Clear
+              {t('common.clear')}
             </button>
           </div>
           
@@ -170,9 +175,9 @@ export default function HTTPStatusLookup() {
               <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2">
                 {status.message}
               </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">
-                {status.description}
-              </p>
+              <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            {t('tools.httpstatus.description')}
+          </p>
             </div>
           ))}
         </div>
@@ -211,9 +216,9 @@ export default function HTTPStatusLookup() {
                 <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-3">
                   {selectedStatus.message}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                  {selectedStatus.description}
-                </p>
+                <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            {t('tools.httpstatus.description')}
+          </p>
               </div>
             </div>
           </div>

@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
+import Breadcrumbs from '../../components/Breadcrumbs';
 import { useState } from "react";
 
 const languages = [
@@ -46,6 +48,7 @@ function simpleFormat(code: string, lang: string): string {
 }
 
 export default function CodeBeautifier() {
+  const t = useTranslations();
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [lang, setLang] = useState("javascript");
@@ -53,7 +56,7 @@ export default function CodeBeautifier() {
 
   const handleFormat = () => {
     if (!input.trim()) {
-      setError("Please enter code");
+      setError(t('errors.invalidInput'));
       setOutput("");
       return;
     }
@@ -62,7 +65,7 @@ export default function CodeBeautifier() {
       setOutput(formatted);
       setError("");
     } catch (e) {
-      setError("Formatting failed, please check code format");
+      setError(t('errors.somethingWentWrong'));
       setOutput("");
     }
   };
@@ -83,17 +86,19 @@ export default function CodeBeautifier() {
 
   return (
     <div className="p-4 md:p-8">
-      <div className="max-w-5xl mx-auto">
-        <header className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">
-            Code Beautifier
+      <div className="max-w-4xl mx-auto">
+        <Breadcrumbs />
+        
+        <header className="text-center mb-8 mt-4">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            {t('tools.codeBeautifier.title')}
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Supports code formatting and beautification for multiple popular programming languages, improving code readability
+            {t('tools.codeBeautifier.description')}
           </p>
         </header>
 
-        {/* 语言选择 */}
+        {/* Language Selection */}
         <div className="flex flex-wrap gap-2 justify-center mb-6">
           <span className="text-slate-700 dark:text-slate-300 font-medium">Language:</span>
           {languages.map(l => (
@@ -107,22 +112,22 @@ export default function CodeBeautifier() {
           ))}
         </div>
 
-        {/* 输入输出区 */}
+        {/* Input Output Area */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          {/* 输入区 */}
+          {/* Input Area */}
           <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-6">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200 flex items-center">
                 <svg className="w-6 h-6 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                Input Code
+                {t('common.input')} Code
               </h2>
               <button
                 onClick={handleClear}
                 className="px-3 py-1 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-lg text-sm"
               >
-                Clear
+                {t('common.clear')}
               </button>
             </div>
             <textarea
@@ -138,7 +143,7 @@ export default function CodeBeautifier() {
             )}
           </div>
 
-          {/* 输出区 */}
+          {/* Output Area */}
           <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-6">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200 flex items-center">
@@ -152,14 +157,14 @@ export default function CodeBeautifier() {
                 disabled={!input.trim()}
                 className="px-3 py-1 bg-indigo-500 hover:bg-indigo-600 disabled:bg-slate-300 disabled:cursor-not-allowed text-white rounded-lg text-sm"
               >
-                Format
+                {t('common.format')}
               </button>
               <button
                 onClick={handleCopy}
                 disabled={!output}
                 className="px-3 py-1 bg-blue-500 hover:bg-blue-600 disabled:bg-slate-300 disabled:cursor-not-allowed text-white rounded-lg text-sm ml-2"
               >
-                Copy
+                {t('common.copy')}
               </button>
             </div>
             <textarea
@@ -170,8 +175,6 @@ export default function CodeBeautifier() {
             />
           </div>
         </div>
-
-
       </div>
     </div>
   );

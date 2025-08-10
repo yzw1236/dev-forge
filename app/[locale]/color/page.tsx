@@ -1,5 +1,8 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
+import Breadcrumbs from '../../components/Breadcrumbs';
+
 import { useState, useEffect } from "react";
 
 interface ColorFormats {
@@ -11,6 +14,7 @@ interface ColorFormats {
 }
 
 export default function ColorConverter() {
+  const t = useTranslations();
   const [inputColor, setInputColor] = useState("#3b82f6");
   const [colorFormats, setColorFormats] = useState<ColorFormats>({
     hex: "#3b82f6",
@@ -199,25 +203,26 @@ export default function ColorConverter() {
 
   return (
     <div className="p-4 md:p-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
+        <Breadcrumbs />
         {/* Header */}
         <header className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
-            Color Format Converter
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            {t('tools.color.title')}
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Convert colors between HEX, RGB, HSL, HSV, and CMYK formats
+            {t('tools.color.description')}
           </p>
         </header>
 
-        {/* Input Section */}
+        {/* {t('common.input')} Section */}
         <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200 flex items-center">
               <svg className="w-6 h-6 mr-2 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17v4a2 2 0 002 2h4M15 7l3-3m0 0h-3m3 0v3" />
               </svg>
-              Input Color
+              {t('common.input')} Color
             </h2>
             <div className="flex space-x-2">
               <button
@@ -232,7 +237,7 @@ export default function ColorConverter() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                Color Input
+                Color {t('common.input')}
               </label>
               <input
                 type="text"
@@ -294,7 +299,7 @@ export default function ColorConverter() {
                 onClick={() => handleCopy(colorFormats.hex)}
                 className="px-3 py-1 bg-red-500 hover:bg-red-600 text-white text-xs rounded-md transition-all duration-200"
               >
-                Copy
+                {t('common.copy')}
               </button>
             </div>
             <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg p-3">
@@ -315,7 +320,7 @@ export default function ColorConverter() {
                 onClick={() => handleCopy(colorFormats.rgb)}
                 className="px-3 py-1 bg-green-500 hover:bg-green-600 text-white text-xs rounded-md transition-all duration-200"
               >
-                Copy
+                {t('common.copy')}
               </button>
             </div>
             <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg p-3">
@@ -336,7 +341,7 @@ export default function ColorConverter() {
                 onClick={() => handleCopy(colorFormats.hsl)}
                 className="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white text-xs rounded-md transition-all duration-200"
               >
-                Copy
+                {t('common.copy')}
               </button>
             </div>
             <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg p-3">
@@ -357,7 +362,7 @@ export default function ColorConverter() {
                 onClick={() => handleCopy(colorFormats.hsv)}
                 className="px-3 py-1 bg-yellow-500 hover:bg-yellow-600 text-white text-xs rounded-md transition-all duration-200"
               >
-                Copy
+                {t('common.copy')}
               </button>
             </div>
             <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg p-3">
@@ -378,7 +383,7 @@ export default function ColorConverter() {
                 onClick={() => handleCopy(colorFormats.cmyk)}
                 className="px-3 py-1 bg-purple-500 hover:bg-purple-600 text-white text-xs rounded-md transition-all duration-200"
               >
-                Copy
+                {t('common.copy')}
               </button>
             </div>
             <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg p-3">

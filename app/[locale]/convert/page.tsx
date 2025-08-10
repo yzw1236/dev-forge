@@ -1,5 +1,8 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
+import Breadcrumbs from '../../components/Breadcrumbs';
+
 import { useState } from "react";
 
 // 由于 Next.js 不能直接用 nodejs 的 yaml/xml 库，这里用简单正则和 JSON.parse/stringify 实现基础功能
@@ -42,6 +45,7 @@ function detectFormat(text: string): "json" | "yaml" | "xml" | "unknown" {
 }
 
 export default function DataConvertTool() {
+  const t = useTranslations();
   const [input, setInput] = useState("");
   const [inputFormat, setInputFormat] = useState<"json" | "yaml" | "xml" | "unknown">("unknown");
   const [outputFormat, setOutputFormat] = useState<"json" | "yaml" | "xml">("json");
@@ -99,18 +103,19 @@ export default function DataConvertTool() {
   return (
     <div className="p-4 md:p-8">
       <div className="max-w-4xl mx-auto">
+        <Breadcrumbs />
         <header className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-sky-600 to-cyan-600 bg-clip-text text-transparent">
-            Data Structure Format Conversion
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            {t('tools.convert.title')}
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Supports JSON, YAML, XML format conversion, automatic detection of input format, and formatted output
+            {t('tools.convert.description')}
           </p>
         </header>
 
         {/* 格式选择 */}
         <div className="flex flex-wrap gap-2 justify-center mb-6">
-          <span className="text-slate-700 dark:text-slate-300 font-medium">Output Format:</span>
+          <span className="text-slate-700 dark:text-slate-300 font-medium">{t('common.output')} Format:</span>
           {(["json", "yaml", "xml"] as const).map(fmt => (
             <button
               key={fmt}
@@ -130,13 +135,13 @@ export default function DataConvertTool() {
                 <svg className="w-6 h-6 mr-2 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                Input Content
+                {t('common.input')} Content
               </h2>
               <button
                 onClick={handleClear}
                 className="px-3 py-1 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-lg text-sm"
               >
-                Clear
+                {t('common.clear')}
               </button>
             </div>
             <textarea
@@ -146,7 +151,7 @@ export default function DataConvertTool() {
               className="w-full h-48 p-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg font-mono text-sm resize-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200"
             />
             {inputFormat !== "unknown" && (
-              <div className="mt-2 text-xs text-slate-500 dark:text-slate-400">Detected Input Format: {inputFormat.toUpperCase()}</div>
+              <div className="mt-2 text-xs text-slate-500 dark:text-slate-400">Detected {t('common.input')} Format: {inputFormat.toUpperCase()}</div>
             )}
             {error && (
               <div className="mt-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
@@ -176,13 +181,13 @@ export default function DataConvertTool() {
                 disabled={!output}
                 className="px-3 py-1 bg-cyan-500 hover:bg-cyan-600 disabled:bg-slate-300 disabled:cursor-not-allowed text-white rounded-lg text-sm ml-2"
               >
-                Copy
+                {t('common.copy')}
               </button>
             </div>
             <textarea
               value={output}
               readOnly
-              placeholder="Output will be displayed here"
+              placeholder="{t('common.output')} will be displayed here"
               className="w-full h-48 p-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg font-mono text-sm resize-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200"
             />
           </div>

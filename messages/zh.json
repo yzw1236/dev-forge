@@ -44,7 +44,37 @@
     "theme": "主题",
     "darkMode": "深色模式",
     "lightMode": "浅色模式",
-    "openTool": "打开工具"
+    "openTool": "打开工具",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "warning": "警告",
+    "info": "信息",
+    "close": "关闭",
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "add": "添加",
+    "remove": "移除",
+    "search": "搜索",
+    "filter": "筛选",
+    "sort": "排序",
+    "refresh": "刷新",
+    "back": "返回",
+    "next": "下一步",
+    "previous": "上一步",
+    "submit": "提交",
+    "reset": "重置",
+    "apply": "应用",
+    "confirm": "确认",
+    "yes": "是",
+    "no": "否",
+    "ok": "确定",
+    "validate": "验证",
+    "paste": "粘贴",
+    "type": "输入",
+    "here": "这里"
   },
   "home": {
     "title": "Dev Forge - 开发者工具",
@@ -55,16 +85,97 @@
     "tools": "工具",
     "getStarted": "开始使用"
   },
+  "tools": {
+    "jsonTools": {
+      "description": "格式化、验证和美化 JSON 数据",
+      "title": "JSON 工具 - 格式化和验证 JSON"
+    },
+    "base64Encoder": {
+      "description": "编码和解码 Base64 字符串",
+      "title": "Base64 编码器/解码器"
+    },
+    "timestamp": {
+      "description": "在时间戳和可读日期之间转换",
+      "title": "时间戳转换器"
+    },
+    "crontabTool": {
+      "description": "生成和验证 cron 表达式",
+      "title": "Crontab 工具"
+    },
+    "hashCalculator": {
+      "description": "计算各种哈希算法",
+      "title": "哈希计算器"
+    },
+    "jwtDecoder": {
+      "description": "解码和验证 JWT 令牌",
+      "title": "JWT 解码器"
+    },
+    "uuidGenerator": {
+      "description": "生成各种格式的 UUID",
+      "title": "UUID 生成器"
+    },
+    "passwordGenerator": {
+      "description": "生成具有自定义选项的安全密码",
+      "title": "密码生成器"
+    },
+    "urlTool": {
+      "description": "编码和解码 URL",
+      "title": "URL 工具"
+    },
+    "codeBeautifier": {
+      "description": "美化和格式化各种语言的代码",
+      "title": "代码美化器"
+    },
+    "colorConverter": {
+      "description": "在颜色格式之间转换",
+      "title": "颜色转换器"
+    },
+    "baseConverter": {
+      "description": "在数字进制之间转换",
+      "title": "进制转换器"
+    },
+    "sqlFormatter": {
+      "description": "格式化和美化 SQL 查询",
+      "title": "SQL 格式化器"
+    },
+    "imageToBase64": {
+      "description": "将图片转换为 Base64 字符串",
+      "title": "图片转 Base64"
+    },
+    "dataConverter": {
+      "description": "在不同数据格式之间转换",
+      "title": "数据转换器"
+    },
+    "httpStatusLookup": {
+      "description": "查找 HTTP 状态码和含义",
+      "title": "HTTP 状态查询"
+    },
+    "userAgentParser": {
+      "description": "解析和分析用户代理字符串",
+      "title": "User-Agent 解析器"
+    }
+  },
   "errors": {
     "invalidInput": "无效输入",
     "somethingWentWrong": "出现错误",
     "tryAgain": "请重试",
-    "notFound": "未找到"
+    "notFound": "未找到",
+    "networkError": "网络错误",
+    "serverError": "服务器错误",
+    "validationError": "验证错误",
+    "permissionDenied": "权限被拒绝",
+    "fileTooLarge": "文件过大",
+    "unsupportedFormat": "不支持的格式"
   },
   "success": {
     "copied": "已复制到剪贴板",
     "generated": "已生成",
     "converted": "已转换",
-    "formatted": "已格式化"
+    "formatted": "已格式化",
+    "saved": "已保存",
+    "uploaded": "已上传",
+    "downloaded": "已下载",
+    "deleted": "已删除",
+    "updated": "已更新"
   }
 } 

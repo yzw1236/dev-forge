@@ -15,9 +15,6 @@ export default function NavigationLayout({
   const t = useTranslations();
   const locale = useLocale();
   
-  // Debug: Log the current locale
-  console.log('NavigationLayout - Current locale:', locale);
-
   const navigationItems = [
     { href: `/${locale}`, icon: "M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z M8 5a2 2 0 012-2h4a2 2 0 012 2v2H8V5z", text: t('navigation.dashboard'), color: "text-green-500" },
     { href: `/${locale}/json`, icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4", text: t('navigation.jsonTools'), color: "text-purple-500" },

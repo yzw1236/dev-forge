@@ -1,16 +1,22 @@
 "use client";
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function TimestampPage() {
+  const t = useTranslations();
+  
   return (
     <div className="p-4 md:p-8">
       <div className="max-w-2xl mx-auto">
-        <header className="text-center mb-6 md:mb-8">
+        <Breadcrumbs />
+        
+        <header className="text-center mb-6 md:mb-8 mt-4">
           <h1 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">
-            Timestamp Converter
+            {t('tools.timestamp.title')}
           </h1>
           <p className="text-base md:text-lg text-slate-600 dark:text-slate-400">
-            Convert between Unix timestamps and human-readable dates
+            {t('tools.timestamp.description')}
           </p>
         </header>
         
@@ -23,6 +29,7 @@ export default function TimestampPage() {
 }
 
 function TimestampConverter() {
+  const t = useTranslations();
   const [input, setInput] = useState("");
   const [result, setResult] = useState("");
   const [error, setError] = useState("");
@@ -31,7 +38,7 @@ function TimestampConverter() {
     setError("");
     setResult("");
     if (!input.trim()) {
-      setError("Please enter a date or timestamp.");
+      setError(t('errors.invalidInput'));
       return;
     }
     let num = Number(input.trim());
@@ -49,7 +56,7 @@ function TimestampConverter() {
       if (isNaN(date.getTime())) throw new Error();
       setResult(date.getTime().toString());
     } catch {
-      setError("Invalid date or timestamp.");
+      setError(t('errors.invalidInput'));
     }
   }
 
@@ -57,12 +64,12 @@ function TimestampConverter() {
     <div className="flex flex-col gap-4">
       <div>
         <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-          Input Date or Timestamp
+          {t('common.input')}
         </label>
         <input
           className="w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 md:px-4 md:py-3 text-sm bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
           type="text"
-          placeholder="Enter date (YYYY-MM-DD) or timestamp"
+          placeholder={t('common.input') + "..."}
           value={input}
           onChange={e => setInput(e.target.value)}
           onKeyDown={e => { if (e.key === 'Enter') handleConvert(); }}
@@ -73,12 +80,12 @@ function TimestampConverter() {
         className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium rounded-lg px-4 py-2 md:px-6 md:py-3 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-sm md:text-base"
         onClick={handleConvert}
       >
-        Convert
+        {t('common.convert')}
       </button>
       
       {result && (
         <div className="mt-4 p-3 md:p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
-          <div className="text-sm font-medium text-green-800 dark:text-green-200 mb-1">Result:</div>
+          <div className="text-sm font-medium text-green-800 dark:text-green-200 mb-1">{t('common.output')}:</div>
           <div className="text-green-700 dark:text-green-400 break-all font-mono text-xs md:text-sm">
             {result}
           </div>

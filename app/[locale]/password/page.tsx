@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function PasswordGenerator() {
+  const t = useTranslations();
   const [password, setPassword] = useState("");
   const [length, setLength] = useState(16);
   const [includeUppercase, setIncludeUppercase] = useState(true);
@@ -77,13 +80,15 @@ export default function PasswordGenerator() {
   return (
     <div className="p-4 md:p-8">
       <div className="max-w-4xl mx-auto">
+        <Breadcrumbs />
+        
         {/* Header */}
-        <header className="text-center mb-8">
+        <header className="text-center mb-8 mt-4">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">
-            Password Generator
+            {t('tools.passwordGenerator.title')}
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Generate secure, customizable passwords for your accounts
+            {t('tools.passwordGenerator.description')}
           </p>
         </header>
 
@@ -94,7 +99,7 @@ export default function PasswordGenerator() {
               <svg className="w-6 h-6 mr-2 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
               </svg>
-              Generated Password
+              {t('common.generated')} {t('navigation.passwordGenerator')}
             </h2>
             <div className="flex space-x-2">
               {password && (
@@ -105,14 +110,14 @@ export default function PasswordGenerator() {
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
-                  Copy
+                  {t('common.copy')}
                 </button>
               )}
               <button
                 onClick={handleClear}
                 className="px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-medium rounded-lg transition-all duration-200 text-sm"
               >
-                Clear
+                {t('common.clear')}
               </button>
             </div>
           </div>
@@ -129,7 +134,7 @@ export default function PasswordGenerator() {
               </div>
             ) : (
               <div className="text-slate-500 dark:text-slate-400 text-center py-8">
-                Click "Generate Password" to create a secure password
+                Click "{t('common.generate')} {t('navigation.passwordGenerator')}" to create a secure password
               </div>
             )}
           </div>
@@ -162,7 +167,7 @@ export default function PasswordGenerator() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            Password Settings
+            {t('navigation.passwordGenerator')} {t('common.settings')}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -262,12 +267,10 @@ export default function PasswordGenerator() {
               disabled={!includeUppercase && !includeLowercase && !includeNumbers && !includeSymbols}
               className="w-full px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 disabled:from-slate-400 disabled:to-slate-500 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg disabled:cursor-not-allowed"
             >
-              Generate Password
+              {t('common.generate')} {t('navigation.passwordGenerator')}
             </button>
           </div>
         </div>
-
-
       </div>
     </div>
   );

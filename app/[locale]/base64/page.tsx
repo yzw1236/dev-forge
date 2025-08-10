@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function Base64Tool() {
+  const t = useTranslations();
   const [inputText, setInputText] = useState("");
   const [outputText, setOutputText] = useState("");
   const [mode, setMode] = useState<"encode" | "decode">("encode");
@@ -10,7 +13,7 @@ export default function Base64Tool() {
 
   const handleEncode = () => {
     if (!inputText.trim()) {
-      setError("Please enter text to encode");
+      setError(t('errors.invalidInput'));
       setOutputText("");
       return;
     }
@@ -20,14 +23,14 @@ export default function Base64Tool() {
       setOutputText(encoded);
       setError("");
     } catch (err) {
-      setError("Failed to encode text. Please check your input.");
+      setError(t('errors.somethingWentWrong'));
       setOutputText("");
     }
   };
 
   const handleDecode = () => {
     if (!inputText.trim()) {
-      setError("Please enter Base64 text to decode");
+      setError(t('errors.invalidInput'));
       setOutputText("");
       return;
     }
@@ -37,7 +40,7 @@ export default function Base64Tool() {
       setOutputText(decoded);
       setError("");
     } catch (err) {
-      setError("Invalid Base64 string. Please check your input.");
+      setError(t('errors.invalidInput'));
       setOutputText("");
     }
   };
@@ -75,13 +78,15 @@ export default function Base64Tool() {
   return (
     <div className="p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
+        <Breadcrumbs />
+        
         {/* Header */}
-        <header className="text-center mb-8">
+        <header className="text-center mb-8 mt-4">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-            Base64 Encoder/Decoder
+            {t('tools.base64Encoder.title')}
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Encode text to Base64 or decode Base64 back to text
+            {t('tools.base64Encoder.description')}
           </p>
         </header>
 
@@ -96,7 +101,7 @@ export default function Base64Tool() {
                   : "text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200"
               }`}
             >
-              Encode
+              {t('common.encode')}
             </button>
             <button
               onClick={() => setMode("decode")}
@@ -106,7 +111,7 @@ export default function Base64Tool() {
                   : "text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200"
               }`}
             >
-              Decode
+              {t('common.decode')}
             </button>
           </div>
         </div>
@@ -120,7 +125,7 @@ export default function Base64Tool() {
                 <svg className="w-6 h-6 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                {mode === "encode" ? "Input Text" : "Base64 String"}
+                {mode === "encode" ? t('common.input') : "Base64 String"}
               </h2>
               <div className="flex space-x-2">
                 <button
@@ -128,13 +133,13 @@ export default function Base64Tool() {
                   disabled={!inputText.trim()}
                   className="px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 disabled:from-slate-400 disabled:to-slate-500 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg disabled:cursor-not-allowed text-sm"
                 >
-                  {mode === "encode" ? "Encode" : "Decode"}
+                  {mode === "encode" ? t('common.encode') : t('common.decode')}
                 </button>
                 <button
                   onClick={handleClear}
                   className="px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-medium rounded-lg transition-all duration-200 text-sm"
                 >
-                  Clear
+                  {t('common.clear')}
                 </button>
               </div>
             </div>
@@ -143,8 +148,8 @@ export default function Base64Tool() {
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               placeholder={mode === "encode" 
-                ? "Enter text to encode to Base64..." 
-                : "Enter Base64 string to decode..."
+                ? t('common.input') + "..." 
+                : "Base64 " + t('common.input') + "..."
               }
               className="w-full h-80 p-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-lg font-mono text-sm resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
             />
@@ -157,7 +162,7 @@ export default function Base64Tool() {
                 <svg className="w-6 h-6 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                {mode === "encode" ? "Base64 Output" : "Decoded Text"}
+                {mode === "encode" ? "Base64 " + t('common.output') : t('common.output')}
               </h2>
               <div className="flex space-x-2">
                 {outputText && (
@@ -168,7 +173,7 @@ export default function Base64Tool() {
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
-                    Copy
+                    {t('common.copy')}
                   </button>
                 )}
                 {outputText && (
@@ -201,14 +206,12 @@ export default function Base64Tool() {
                 <pre className="whitespace-pre-wrap text-slate-800 dark:text-slate-200 break-all">{outputText}</pre>
               ) : (
                 <div className="text-slate-500 dark:text-slate-400 h-full flex items-center justify-center">
-                  {mode === "encode" ? "Encoded Base64 will appear here..." : "Decoded text will appear here..."}
+                  {mode === "encode" ? "Base64 " + t('common.output') + "..." : t('common.output') + "..."}
                 </div>
               )}
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
   );

@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 export default function UUIDGenerator() {
+  const t = useTranslations();
   const [uuids, setUuids] = useState<string[]>([]);
   const [count, setCount] = useState(1);
   const [format, setFormat] = useState<"uuid" | "guid">("uuid");
@@ -56,13 +59,15 @@ export default function UUIDGenerator() {
   return (
     <div className="p-4 md:p-8">
       <div className="max-w-4xl mx-auto">
+        <Breadcrumbs />
+        
         {/* Header */}
-        <header className="text-center mb-8">
+        <header className="text-center mb-8 mt-4">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">
-            UUID/GUID Generator
+            {t('tools.uuidGenerator.title')}
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Generate unique identifiers for your applications and databases
+            {t('tools.uuidGenerator.description')}
           </p>
         </header>
 
@@ -72,7 +77,7 @@ export default function UUIDGenerator() {
             {/* Format Selector */}
             <div>
               <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                Format
+                {t('common.format')}
               </label>
               <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-1">
                 <button
@@ -119,13 +124,13 @@ export default function UUIDGenerator() {
                 onClick={handleGenerate}
                 className="flex-1 px-6 py-2 bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
               >
-                Generate
+                {t('common.generate')}
               </button>
               <button
                 onClick={handleClear}
                 className="px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-medium rounded-lg transition-all duration-200"
               >
-                Clear
+                {t('common.clear')}
               </button>
             </div>
           </div>
@@ -139,7 +144,7 @@ export default function UUIDGenerator() {
                 <svg className="w-6 h-6 mr-2 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                Generated {format.toUpperCase()}s ({uuids.length})
+                {t('common.generated')} {format.toUpperCase()}s ({uuids.length})
               </h2>
               <button
                 onClick={handleCopyAll}
@@ -148,7 +153,7 @@ export default function UUIDGenerator() {
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
-                Copy All
+                {t('common.copy')} All
               </button>
             </div>
             
@@ -165,15 +170,13 @@ export default function UUIDGenerator() {
                     onClick={() => handleCopy(uuid)}
                     className="ml-3 px-3 py-1 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-md transition-all duration-200 text-xs"
                   >
-                    Copy
+                    {t('common.copy')}
                   </button>
                 </div>
               ))}
             </div>
           </div>
         )}
-
-
       </div>
     </div>
   );

@@ -1,5 +1,8 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
+import Breadcrumbs from '../../components/Breadcrumbs';
+
 import { useState } from "react";
 
 interface UserAgentInfo {
@@ -17,6 +20,7 @@ interface UserAgentInfo {
 }
 
 export default function UserAgentParser() {
+  const t = useTranslations();
   const [userAgent, setUserAgent] = useState("");
   const [parsedInfo, setParsedInfo] = useState<UserAgentInfo | null>(null);
   const [error, setError] = useState("");
@@ -220,18 +224,19 @@ export default function UserAgentParser() {
 
   return (
     <div className="p-4 md:p-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
+        <Breadcrumbs />
         {/* Header */}
         <header className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-lime-600 to-green-600 bg-clip-text text-transparent">
-            User-Agent Parser
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            {t('tools.useragent.title')}
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Parse and analyze User-Agent strings to extract browser, OS, and device information
+            {t('tools.useragent.description')}
           </p>
         </header>
 
-        {/* Input Section */}
+        {/* {t('common.input')} Section */}
         <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200 flex items-center">
@@ -252,7 +257,7 @@ export default function UserAgentParser() {
                 onClick={handleClear}
                 className="px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-medium rounded-lg transition-all duration-200 text-sm"
               >
-                Clear
+                {t('common.clear')}
               </button>
             </div>
           </div>
