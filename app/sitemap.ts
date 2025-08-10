@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next'
 
+const baseUrl = 'https://dev-forge.vercel.app'
+
 const tools = [
   'json',
   'base64',
@@ -18,43 +20,40 @@ const tools = [
   'convert',
   'http-status',
   'user-agent'
-];
-
-const locales = ['en', 'zh'];
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://dev-forge.vercel.app';
-  
-  const routes = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 1,
-    },
-  ];
+  const locales = ['en', 'zh']
+  const sitemap: MetadataRoute.Sitemap = []
 
-  // Add locale-specific home pages
+  // Add root pages
+  sitemap.push({
+    url: baseUrl,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 1,
+  })
+
+  // Add locale-specific pages
   locales.forEach(locale => {
-    routes.push({
+    // Home page for each locale
+    sitemap.push({
       url: `${baseUrl}/${locale}`,
       lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
+      changeFrequency: 'weekly',
       priority: 0.9,
-    });
-  });
+    })
 
-  // Add tool pages for each locale
-  locales.forEach(locale => {
+    // Tool pages for each locale
     tools.forEach(tool => {
-      routes.push({
+      sitemap.push({
         url: `${baseUrl}/${locale}/${tool}`,
         lastModified: new Date(),
-        changeFrequency: 'weekly' as const,
+        changeFrequency: 'monthly',
         priority: 0.8,
-      });
-    });
-  });
+      })
+    })
+  })
 
-  return routes;
-} 
+  return sitemap
+}

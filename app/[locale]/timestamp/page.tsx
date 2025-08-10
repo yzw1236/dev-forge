@@ -1,12 +1,104 @@
-import type { Metadata } from "next";
-import { generateToolMetadata } from "../../lib/seo";
-import TimestampConverter from "./TimestampConverter";
+"use client";
+import { useState } from "react";
+import { useTranslations } from 'next-intl';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  const { locale } = await params;
-  return generateToolMetadata('timestamp', locale);
+export default function TimestampPage() {
+  const t = useTranslations();
+  
+  return (
+    <div className="p-4 md:p-8">
+      <div className="max-w-2xl mx-auto">
+        <Breadcrumbs />
+        
+        <header className="text-center mb-6 md:mb-8 mt-4">
+          <h1 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">
+            {t('tools.timestamp.title')}
+          </h1>
+          <p className="text-base md:text-lg text-slate-600 dark:text-slate-400">
+            {t('tools.timestamp.description')}
+          </p>
+        </header>
+        
+        <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 p-4 md:p-8">
+          <TimestampConverter />
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default function TimestampPagePage() {
-  return <TimestampConverter />;
+function TimestampConverter() {
+  const t = useTranslations();
+  const [input, setInput] = useState("");
+  const [result, setResult] = useState("");
+  const [error, setError] = useState("");
+
+  function handleConvert() {
+    setError("");
+    setResult("");
+    if (!input.trim()) {
+      setError(t('errors.invalidInput'));
+      return;
+    }
+    let num = Number(input.trim());
+    if (!isNaN(num)) {
+      if (input.trim().length === 10) num = num * 1000;
+      try {
+        const date = new Date(num);
+        if (isNaN(date.getTime())) throw new Error();
+        setResult(date.toISOString());
+        return;
+      } catch {}
+    }
+    try {
+      const date = new Date(input.trim());
+      if (isNaN(date.getTime())) throw new Error();
+      setResult(date.getTime().toString());
+    } catch {
+      setError(t('errors.invalidInput'));
+    }
+  }
+
+  return (
+    <div className="flex flex-col gap-4">
+      <div>
+        <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+          {t('common.input')}
+        </label>
+        <input
+          className="w-full border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 md:px-4 md:py-3 text-sm bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
+          type="text"
+          placeholder={t('common.input') + "..."}
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          onKeyDown={e => { if (e.key === 'Enter') handleConvert(); }}
+        />
+      </div>
+      
+      <button
+        className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium rounded-lg px-4 py-2 md:px-6 md:py-3 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-sm md:text-base"
+        onClick={handleConvert}
+      >
+        {t('common.convert')}
+      </button>
+      
+      {result && (
+        <div className="mt-4 p-3 md:p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+          <div className="text-sm font-medium text-green-800 dark:text-green-200 mb-1">{t('common.output')}:</div>
+          <div className="text-green-700 dark:text-green-400 break-all font-mono text-xs md:text-sm">
+            {result}
+          </div>
+        </div>
+      )}
+      
+      {error && (
+        <div className="mt-4 p-3 md:p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+          <div className="text-red-600 dark:text-red-400 text-sm">
+            {error}
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }

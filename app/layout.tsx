@@ -5,37 +5,41 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Dev Forge - Developer Tools",
+    default: "Dev Forge - Ultimate Developer Tools Collection",
     template: "%s | Dev Forge"
   },
-  description: "A comprehensive collection of developer tools including JSON formatter, Base64 encoder, JWT decoder, hash calculator, and more. Boost your productivity with our free online developer utilities.",
+  description: "Free online developer tools for JSON formatting, Base64 encoding, JWT decoding, password generation, and more. Boost your productivity with our comprehensive developer toolkit.",
   keywords: [
     "developer tools",
     "JSON formatter",
     "Base64 encoder",
     "JWT decoder",
-    "hash calculator",
-    "UUID generator",
     "password generator",
-    "code beautifier",
-    "SQL formatter",
+    "UUID generator",
+    "hash calculator",
     "timestamp converter",
     "crontab tool",
+    "SQL formatter",
+    "code beautifier",
     "color converter",
     "URL encoder",
+    "HTTP status codes",
     "user agent parser",
-    "HTTP status codes"
+    "web development tools",
+    "programming utilities"
   ],
-  authors: [{ name: "bbj" }],
+  authors: [{ name: "bbj", url: "https://github.com/yzw1236" }],
   creator: "bbj",
   publisher: "Dev Forge",
   formatDetection: {
@@ -55,8 +59,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://dev-forge.vercel.app',
-    title: 'Dev Forge - Developer Tools',
-    description: 'A comprehensive collection of developer tools including JSON formatter, Base64 encoder, JWT decoder, hash calculator, and more.',
+    title: 'Dev Forge - Ultimate Developer Tools Collection',
+    description: 'Free online developer tools for JSON formatting, Base64 encoding, JWT decoding, password generation, and more. Boost your productivity with our comprehensive developer toolkit.',
     siteName: 'Dev Forge',
     images: [
       {
@@ -69,8 +73,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dev Forge - Developer Tools',
-    description: 'A comprehensive collection of developer tools including JSON formatter, Base64 encoder, JWT decoder, hash calculator, and more.',
+    title: 'Dev Forge - Ultimate Developer Tools Collection',
+    description: 'Free online developer tools for JSON formatting, Base64 encoding, JWT decoding, password generation, and more.',
     images: ['/og-image.png'],
     creator: '@bbj',
   },
@@ -87,6 +91,8 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'your-google-verification-code',
+    yandex: 'your-yandex-verification-code',
+    yahoo: 'your-yahoo-verification-code',
   },
 };
 
@@ -98,12 +104,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#3b82f6" />
+        <meta name="msapplication-TileColor" content="#3b82f6" />
+        
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -122,16 +128,29 @@ export default function RootLayout({
               },
               "author": {
                 "@type": "Person",
-                "name": "bbj"
+                "name": "bbj",
+                "url": "https://github.com/yzw1236"
               },
               "creator": {
                 "@type": "Person",
                 "name": "bbj"
               },
-              "publisher": {
-                "@type": "Organization",
-                "name": "Dev Forge"
-              }
+              "featureList": [
+                "JSON Tools",
+                "Base64 Encoder/Decoder",
+                "JWT Decoder",
+                "Password Generator",
+                "UUID Generator",
+                "Hash Calculator",
+                "Timestamp Converter",
+                "Crontab Tool",
+                "SQL Formatter",
+                "Code Beautifier",
+                "Color Converter",
+                "URL Tool",
+                "HTTP Status Lookup",
+                "User-Agent Parser"
+              ]
             })
           }}
         />

@@ -8,15 +8,10 @@ export const defaultLocale = 'zh' as const;
 export type Locale = (typeof locales)[number];
 
 export default getRequestConfig(async ({ locale }) => {
-  console.log('i18n config called with locale:', locale);
-  
   // If locale is undefined or invalid, use default locale
   if (!locale || !locales.includes(locale as any)) {
-    console.log('Invalid or undefined locale:', locale, 'using default:', defaultLocale);
     locale = defaultLocale;
   }
-
-  console.log('Using locale:', locale);
   
   try {
     return {
