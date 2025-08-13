@@ -19,6 +19,7 @@ const tools = [
   'image2base64',
   'convert',
   'http-status',
+  'dns',
   'user-agent'
 ]
 

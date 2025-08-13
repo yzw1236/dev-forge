@@ -33,6 +33,7 @@ export default function NavigationLayout({
     { href: `/${locale}/image2base64`, icon: "M7 16V4a1 1 0 011-1h8a1 1 0 011 1v12m-4 4h-4a1 1 0 01-1-1v-4h6v4a1 1 0 01-1 1z", text: t('navigation.imageToBase64'), color: "text-orange-500" },
     { href: `/${locale}/convert`, icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z", text: t('navigation.dataConverter'), color: "text-amber-500" },
     { href: `/${locale}/http-status`, icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z", text: t('navigation.httpStatusLookup'), color: "text-cyan-500" },
+    { href: `/${locale}/dns`, icon: "M3 5h18M3 12h18M3 19h18", text: t('navigation.dnsResolver'), color: "text-sky-500" },
     { href: `/${locale}/user-agent`, icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z", text: t('navigation.userAgentParser'), color: "text-lime-500" },
   ];
 
