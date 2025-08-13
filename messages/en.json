@@ -19,6 +19,7 @@
     "imageToBase64": "Image to Base64",
     "dataConverter": "Data Converter",
     "httpStatusLookup": "HTTP Status Lookup",
+    "dnsResolver": "DNS Resolver",
     "userAgentParser": "User-Agent Parser"
   },
   "common": {
@@ -58,6 +59,7 @@
     "add": "Add",
     "remove": "Remove",
     "search": "Search",
+    "resolve": "Resolve",
     "filter": "Filter",
     "sort": "Sort",
     "refresh": "Refresh",
@@ -149,6 +151,18 @@
     "httpStatusLookup": {
       "description": "Look up HTTP status codes and meanings",
       "title": "HTTP Status Lookup"
+    },
+    "dnsResolver": {
+      "description": "Resolve DNS records across popular public DNS servers",
+      "title": "DNS Resolver",
+      "fields": {
+        "domain": "Domain",
+        "recordType": "Record Type",
+        "resolvers": "Resolvers"
+      },
+      "results": "Results",
+      "status": "Status",
+      "noAnswer": "No records"
     },
     "userAgentParser": {
       "description": "Parse and analyze user agent strings",

@@ -19,6 +19,7 @@
     "imageToBase64": "图片转 Base64",
     "dataConverter": "数据转换器",
     "httpStatusLookup": "HTTP 状态查询",
+    "dnsResolver": "DNS 解析",
     "userAgentParser": "User-Agent 解析器"
   },
   "common": {
@@ -58,6 +59,7 @@
     "add": "添加",
     "remove": "移除",
     "search": "搜索",
+    "resolve": "解析",
     "filter": "筛选",
     "sort": "排序",
     "refresh": "刷新",
@@ -149,6 +151,18 @@
     "httpStatusLookup": {
       "description": "查找 HTTP 状态码和含义",
       "title": "HTTP 状态查询"
+    },
+    "dnsResolver": {
+      "description": "使用常见公共 DNS 服务器解析 DNS 记录",
+      "title": "DNS 解析",
+      "fields": {
+        "domain": "域名",
+        "recordType": "记录类型",
+        "resolvers": "解析服务器"
+      },
+      "results": "解析结果",
+      "status": "状态",
+      "noAnswer": "无记录"
     },
     "userAgentParser": {
       "description": "解析和分析用户代理字符串",
